@@ -1,0 +1,7 @@
+GET http://localhost:3000 HTTP/1.1
+###
+GET http://localhost:3000/2 HTTP/1.1
+###
+GET http://localhost:3000/3 HTTP/1.1
+###
+GET http://localhost:3000/4 HTTP/1.1

@@ -5,6 +5,7 @@
 ```
 $ npm init --y
 $ npm install express --save
+$ npm i --save express
 $ npm install nodemon --save-dev
 ```
 

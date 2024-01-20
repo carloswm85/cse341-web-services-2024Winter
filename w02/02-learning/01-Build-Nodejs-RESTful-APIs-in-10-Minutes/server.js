@@ -37,8 +37,10 @@
 
   app.listen(port);          // listening api requets on port 3000
 
-  console.log('Node api server running on port ' + port);  // log to check whether server running or not
+console.log('Node api server running on port ' + port);  // log to check whether server running or not
+console.log("http://localhost:" + port + "/");  // log to check whether server running or not
+	
 
-  app.use(function(req, res) {
-  res.status(404).send({url: req.originalUrl + ' not found'}) //Incase an invalid url is specified
-});
+	http: app.use(function (req, res) {
+		res.status(404).send({ url: req.originalUrl + " not found" }); //Incase an invalid url is specified
+	});

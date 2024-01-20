@@ -4,6 +4,7 @@ var mongoose = require("mongoose"),
 	Task = mongoose.model("Tasks");
 
 exports.list_all_tasks = function (req, res) {
+	// console.table(JSON.stringify(req.headers));
 	Task.find({}); 
 };
 

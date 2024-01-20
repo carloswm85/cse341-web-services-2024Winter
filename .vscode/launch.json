@@ -1,0 +1,19 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch Me",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"console": "integratedTerminal",
+			"program": "w02/02-learning/01-Build-Nodejs-RESTful-APIs-in-10-Minutes/server.js"
+		},
+	]
+}

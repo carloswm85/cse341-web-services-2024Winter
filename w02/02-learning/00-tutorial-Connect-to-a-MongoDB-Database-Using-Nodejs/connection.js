@@ -6,8 +6,14 @@
  */
 
 const { MongoClient, ServerApiVersion } = require("mongodb");
+
+const USERNAME = process.env.USER_NAME
+const USERPASS = process.env.USER_PASSWORD
+const CLUSTERURL = process.env.CLUSTER_URL
+const DBNAME = process.env.DATABASE_NAME
+
 const uri =
-	"mongodb+srv://carlos:proyecto@cluster0-cse341-y2024-w.ecqjyt4.mongodb.net/?retryWrites=true&w=majority";
+	"mongodb+srv://carlos:project0@cluster0-cse341-y2024-w.ecqjyt4.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -35,7 +41,7 @@ async function run() {
 	} finally {
 		// Ensures that the client will close when you finish/error
 		await client.close();
-	}
+	} 
 }
 run().catch(console.dir);
 
@@ -45,4 +51,3 @@ async function listDatabases(client){
     console.log("Databases:");
     databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 };
- 

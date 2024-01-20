@@ -6,6 +6,8 @@
  */
 
 const { MongoClient, ServerApiVersion } = require("mongodb");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const USERNAME = process.env.USER_NAME
 const USERPASS = process.env.USER_PASSWORD
@@ -13,8 +15,9 @@ const CLUSTERURL = process.env.CLUSTER_URL
 const DBNAME = process.env.DATABASE_NAME
 
 const uri =
-	"mongodb+srv://carlos:project0@cluster0-cse341-y2024-w.ecqjyt4.mongodb.net/?retryWrites=true&w=majority";
-
+	`mongodb+srv://${USERNAME}:${USERPASS}@${CLUSTERURL}/?retryWrites=true&w=majority`;
+ 
+console.log(`ENV VARIABLES: ${USERNAME}`);
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
 	serverApi: {
@@ -31,7 +34,7 @@ async function run() {
 		// Connect the client to the server	(optional starting in v4.7)
 		await client.connect();
 		// Send a ping to confirm a successful connection
-		await client.db("admin").command({ ping: 1 });
+		var term = await client.db(DBNAME).command({ ping: 1 });
 		console.log(
 			"Pinged your deployment. You successfully connected to MongoDB!"
 		);

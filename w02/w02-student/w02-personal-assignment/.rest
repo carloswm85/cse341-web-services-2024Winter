@@ -1,7 +1,28 @@
 GET http://localhost:3000 HTTP/1.1
 ###
-GET http://localhost:3000/2 HTTP/1.1
+GET http://localhost:3000/contactos HTTP/1.1
 ###
-GET http://localhost:3000/3 HTTP/1.1
+GET http://localhost:3000/contactos/lista HTTP/1.1
 ###
-GET http://localhost:3000/4 HTTP/1.1
+GET http://localhost:3000/contactos/0 HTTP/1.1
+###
+GET http://localhost:3000/contactos/1 HTTP/1.1
+###
+GET http://localhost:3000/contactos/2 HTTP/1.1
+###
+GET http://localhost:3000/contactos/3 HTTP/1.1
+
+###
+GET https://cse341-winter24-p7cl.onrender.com HTTP/1.1
+###
+GET https://cse341-winter24-p7cl.onrender.com/contactos HTTP/1.1
+###
+GET https://cse341-winter24-p7cl.onrender.com/contactos/lista HTTP/1.1
+###
+GET https://cse341-winter24-p7cl.onrender.com/contactos/0 HTTP/1.1
+###
+GET https://cse341-winter24-p7cl.onrender.com/contactos/1 HTTP/1.1
+###
+GET https://cse341-winter24-p7cl.onrender.com/contactos/2 HTTP/1.1
+###
+GET https://cse341-winter24-p7cl.onrender.com/contactos/3 HTTP/1.1

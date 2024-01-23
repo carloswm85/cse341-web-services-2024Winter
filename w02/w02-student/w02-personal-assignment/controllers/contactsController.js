@@ -10,12 +10,12 @@ const getData = async (req, res, next) => {
 		.collection(COLLECTION)
 		.find();
 
-	console.log("RESULT: ");
-	console.log("object :>> ", result);
+	// console.log("RESULT: ");
+	// console.log("object :>> ", result);
 
 	result.toArray().then((lists) => {
-		console.log("LISTS: ");
-		console.log("object :>> ", lists);
+		// console.log("LISTS: ");
+		// console.log("object :>> ", lists);
 
 		res.setHeader("Content-Type", "application/json");
 		res.status(200).json(lists);

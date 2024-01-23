@@ -19,8 +19,8 @@ const initDb = (callback) => {
 		.connect(CONNECTION_STRING)
 		.then((selectedClient) => {
 			_db = selectedClient;
-			console.log("_db: ");
-			console.log("object :>> ", _db);
+			// console.log("_db: ");
+			// console.log("object :>> ", _db);
 			callback(null, _db);
 		})
 		.catch((err) => {

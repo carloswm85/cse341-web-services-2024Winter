@@ -11,3 +11,18 @@ GET http://localhost:3000/contactos/1 HTTP/1.1
 GET http://localhost:3000/contactos/2 HTTP/1.1
 ###
 GET http://localhost:3000/contactos/3 HTTP/1.1
+
+###
+GET https://w02-personal-assignament-web-service.onrender.com HTTP/1.1
+###
+GET https://w02-personal-assignament-web-service.onrender.com/contactos HTTP/1.1
+###
+GET https://w02-personal-assignament-web-service.onrender.com/contactos/lista HTTP/1.1
+###
+GET https://w02-personal-assignament-web-service.onrender.com/contactos/0 HTTP/1.1
+###
+GET https://w02-personal-assignament-web-service.onrender.com/contactos/1 HTTP/1.1
+###
+GET https://w02-personal-assignament-web-service.onrender.com/contactos/2 HTTP/1.1
+###
+GET https://w02-personal-assignament-web-service.onrender.com/contactos/3 HTTP/1.1

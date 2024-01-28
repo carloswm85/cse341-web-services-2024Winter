@@ -1,0 +1,35 @@
+GET http://localhost:3000 HTTP/1.1
+###
+GET http://localhost:3000/contactos HTTP/1.1
+###
+GET http://localhost:3000/contactos/lista HTTP/1.1
+###
+DELETE http://localhost:3000/contactos/del/65ac6b2f31d20f49a107b6ca HTTP/1.1
+###
+GET http://localhost:3000/contactos/get/65ac6b2f31d20f49a107b6cb HTTP/1.1
+###
+GET http://localhost:3000/contactos/get/65ac6b2f31d20f49a107b6c9 HTTP/1.1
+###
+POST http://localhost:3000/contactos/contact HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Carlos V",
+	"lastName": "Mercado",
+	"email": "carlos@gmail.com",
+	"favoriteColor": "blue",
+	"birthday": "05/25/85"
+}
+
+###
+GET https://w02-personal-assignament-web-service.onrender.com HTTP/1.1
+###
+GET https://w02-personal-assignament-web-service.onrender.com/contactos HTTP/1.1
+###
+GET https://w02-personal-assignament-web-service.onrender.com/contactos/lista HTTP/1.1
+###
+GET https://w02-personal-assignament-web-service.onrender.com/contactos/65ac6b2f31d20f49a107b6ca HTTP/1.1
+###
+GET https://w02-personal-assignament-web-service.onrender.com/contactos/65ac6b2f31d20f49a107b6cb HTTP/1.1
+###
+GET https://w02-personal-assignament-web-service.onrender.com/contactos/65ac6b2f31d20f49a107b6c9 HTTP/1.1

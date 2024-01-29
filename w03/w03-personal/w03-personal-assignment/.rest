@@ -1,35 +1,58 @@
-GET http://localhost:3000 HTTP/1.1
+// .rest file is used for LOCAL development
+@port = :3000
+@hostnameOrCluster = localhost
+@database = contactos
+@collection = 
+@currentTime = {{$datetime iso8601}}
+@randomInt = {{$randomInt 5 200}}
+
+// -------------------------------------------------------------------- REQUESTS
+
 ###
-GET http://localhost:3000/contactos HTTP/1.1
+// FOR TESTING
+GET http://{{hostnameOrCluster}}{{port}} HTTP/1.1
+
 ###
-GET http://localhost:3000/contactos/lista HTTP/1.1
+// FOR TESTING
+GET http://{{hostnameOrCluster}}{{port}}/{{database}} HTTP/1.1
+
 ###
-DELETE http://localhost:3000/contactos/del/65ac6b2f31d20f49a107b6ca HTTP/1.1
+// GET LIST
+GET http://{{hostnameOrCluster}}{{port}}/{{database}}/contacts HTTP/1.1
+
 ###
-GET http://localhost:3000/contactos/get/65ac6b2f31d20f49a107b6cb HTTP/1.1
+// GET SINGLE ITEM
+@itemId = 65b82555c4057a3dbbde732b
+GET http://{{hostnameOrCluster}}{{port}}/{{database}}/contacts/retrieve/{{itemId}} HTTP/1.1
+
 ###
-GET http://localhost:3000/contactos/get/65ac6b2f31d20f49a107b6c9 HTTP/1.1
-###
-POST http://localhost:3000/contactos/contact HTTP/1.1
+// NEW ITEM
+POST http://{{hostnameOrCluster}}{{port}}/{{database}}/contacts/create HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "Carlos V",
+  "firstName": "Carlos {{randomInt}}",
 	"lastName": "Mercado",
 	"email": "carlos@gmail.com",
 	"favoriteColor": "blue",
-	"birthday": "05/25/85"
+	"birthday": "{{currentTime}}"
 }
 
 ###
-GET https://w02-personal-assignament-web-service.onrender.com HTTP/1.1
+// DELETE ITEM
+@deleteItemId = 65b82742ca60f6601b37609a
+DELETE http://{{hostnameOrCluster}}{{port}}/{{database}}/contacts/delete/{{deleteItemId}} HTTP/1.1
+
 ###
-GET https://w02-personal-assignament-web-service.onrender.com/contactos HTTP/1.1
-###
-GET https://w02-personal-assignament-web-service.onrender.com/contactos/lista HTTP/1.1
-###
-GET https://w02-personal-assignament-web-service.onrender.com/contactos/65ac6b2f31d20f49a107b6ca HTTP/1.1
-###
-GET https://w02-personal-assignament-web-service.onrender.com/contactos/65ac6b2f31d20f49a107b6cb HTTP/1.1
-###
-GET https://w02-personal-assignament-web-service.onrender.com/contactos/65ac6b2f31d20f49a107b6c9 HTTP/1.1
+// UPDATE ITEM
+@updateItemId = 65b82555c4057a3dbbde732b
+PUT http://{{hostnameOrCluster}}{{port}}/{{database}}/contacts/update/{{updateItemId}} HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Carlitos {{randomInt}}",
+	"lastName": "Mercadito",
+	"email": "carlos@gmail.com",
+	"favoriteColor": "blue",
+	"birthday": "{{currentTime}}"
+}

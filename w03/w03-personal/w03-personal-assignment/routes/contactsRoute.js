@@ -5,17 +5,17 @@ const contactsController = require('../controllers/contactsController');
 const router = express.Router();
 
 // GET
-router.get('/lista', contactsController.getData);
-router.get('/get/:id', contactsController.getItem);
+router.get('/contacts', contactsController.getData);
+router.get('/contacts/retrieve/:id', contactsController.getItem);
 
 // POST
-router.post('/contact', contactsController.postItem);
+router.post('/contacts/create', contactsController.postItem);
 
 // PUT
-router.put("/contact", contactsController.postItem);
+router.put("/contacts/update/:id", contactsController.putItem);
 
 // DELETE
-router.delete('/del/:id', contactsController.deleteItem);
+router.delete('/contacts/delete/:id', contactsController.deleteItem);
 
 // localhost:8080/contactos/
 module.exports = router;

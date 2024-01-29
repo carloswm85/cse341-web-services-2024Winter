@@ -67,14 +67,15 @@ const putItem = async (req, res, next) => {
 	try {
 		var selectedId = req.params.id;
 		// Create a filter for items with the selected id
-		const filter = { _id: selectedId };
+		const filter = { _id: new ObjectId(selectedId) };
 
 		// Set the upsert option to insert a document if no documents match the filter
-		const options = { upsert: true };
+		const options = { upsert: false };
 
 		// Specify the update to set a value for the plot field
 		const updateDoc = {
 			$set: {
+				_id: new ObjectId(selectedId),
 				firstName: req.body["firstName"],
 				lastName: req.body["lastName"],
 				email: req.body["email"],

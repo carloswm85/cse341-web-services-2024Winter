@@ -1,6 +1,6 @@
-// .rest file is used for LOCAL development
-@port = :3000
-@hostnameOrCluster = http://localhost
+// .http file is used for REMOTE development
+@port = 
+@hostnameOrCluster = https://w03-personal-assignament-web-service.onrender.com
 @database = contactos
 @collection = 
 @currentTime = {{$datetime iso8601}}
@@ -22,7 +22,7 @@ GET {{hostnameOrCluster}}{{port}}/{{database}}/contacts HTTP/1.1
 
 ###
 // GET SINGLE ITEM
-@itemId = 65b837618c2099b53f070fc6
+@itemId = 65b83439c7ba79864934ad26
 GET {{hostnameOrCluster}}{{port}}/{{database}}/contacts/retrieve/{{itemId}} HTTP/1.1
 
 ###
@@ -40,12 +40,12 @@ content-type: application/json
 
 ###
 // DELETE ITEM
-@deleteItemId = 65b82742ca60f6601b37609a
+@deleteItemId = 65b83440c7ba79864934ad27
 DELETE {{hostnameOrCluster}}{{port}}/{{database}}/contacts/delete/{{deleteItemId}} HTTP/1.1
 
 ###
 // UPDATE ITEM
-@updateItemId = 65b837618c2099b53f070fc6
+@updateItemId = 65b836d0c7ba79864934ad2b
 PUT {{hostnameOrCluster}}{{port}}/{{database}}/contacts/update/{{updateItemId}} HTTP/1.1
 content-type: application/json
 

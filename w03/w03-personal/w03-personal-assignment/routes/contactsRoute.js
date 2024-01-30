@@ -4,8 +4,10 @@ const contactsController = require('../controllers/contactsController');
 
 const router = express.Router();
 
-// GET
-router.get('/contacts', contactsController.getData);
+// GET LIST
+router.get('/contacts/list', contactsController.getData);
+
+// GET ITEM
 router.get('/contacts/retrieve/:id', contactsController.getItem);
 
 // POST

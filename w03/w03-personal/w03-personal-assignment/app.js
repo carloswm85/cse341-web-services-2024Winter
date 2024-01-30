@@ -19,7 +19,7 @@ app
 		res.setHeader('Access-Control-Allow-Origin', '*');
 		next();
 	})
-	.use('/contactos', routes);
+	.use(`/${ROUTE}`, routes);
 
 connection.initDb((err, mongodb) => {
 	if (err) {
@@ -27,6 +27,6 @@ connection.initDb((err, mongodb) => {
 	} else {
 		app.listen(PORT);
 		console.log(`Connected to DB and listening on ${PORT}`);
-		console.log(`http://localhost:${PORT}/${ROUTE}/${SUBROUTE}`);
+		console.log(`http://localhost:${PORT}/${ROUTE}/${SUBROUTE}/list`);
 	}
 })

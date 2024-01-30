@@ -1,7 +1,8 @@
 // .rest file is used for LOCAL development
 @port = :3000
 @hostnameOrCluster = http://localhost
-@database = contactos
+@route = assignments
+@subroute = contacts
 @collection = 
 @currentTime = {{$datetime iso8601}}
 @randomInt = {{$randomInt 5 200}}
@@ -14,20 +15,15 @@ GET {{hostnameOrCluster}}{{port}} HTTP/1.1
 
 ###
 // FOR TESTING
-GET {{hostnameOrCluster}}{{port}}/{{database}} HTTP/1.1
+GET {{hostnameOrCluster}}{{port}}/{{route}} HTTP/1.1
 
 ###
 // GET LIST
-GET {{hostnameOrCluster}}{{port}}/{{database}}/contacts HTTP/1.1
-
-###
-// GET SINGLE ITEM
-@itemId = 65b837618c2099b53f070fc6
-GET {{hostnameOrCluster}}{{port}}/{{database}}/contacts/retrieve/{{itemId}} HTTP/1.1
+GET {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/list HTTP/1.1
 
 ###
 // NEW ITEM
-POST {{hostnameOrCluster}}{{port}}/{{database}}/contacts/create HTTP/1.1
+POST {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/create HTTP/1.1
 content-type: application/json
 
 {
@@ -39,20 +35,25 @@ content-type: application/json
 }
 
 ###
-// DELETE ITEM
-@deleteItemId = 65b82742ca60f6601b37609a
-DELETE {{hostnameOrCluster}}{{port}}/{{database}}/contacts/delete/{{deleteItemId}} HTTP/1.1
+// GET SINGLE ITEM
+@itemId = 65b8526a036fb390f48e1879
+GET {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/retrieve/{{itemId}} HTTP/1.1
 
 ###
 // UPDATE ITEM
-@updateItemId = 65b837618c2099b53f070fc6
-PUT {{hostnameOrCluster}}{{port}}/{{database}}/contacts/update/{{updateItemId}} HTTP/1.1
+@updateItemId = 65b8526a036fb390f48e1879
+PUT {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/update/{{updateItemId}} HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "Carlitos {{randomInt}}",
+  "firstName": "CHANGED Carlitos {{randomInt}}",
 	"lastName": "Mercadito",
 	"email": "carlos@gmail.com",
 	"favoriteColor": "blue",
 	"birthday": "{{currentTime}}"
 }
+
+###
+// DELETE ITEM
+@deleteItemId = 65b8526a036fb390f48e1879
+DELETE {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/delete/{{deleteItemId}} HTTP/1.1

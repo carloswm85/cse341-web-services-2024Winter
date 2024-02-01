@@ -1,8 +1,8 @@
-const routes = require('express').Router();
+const router = require('express').Router();
 const temple = require('./temple');
 
-routes.use('/temples', temple);
-routes.use(
+router.use('/temples', temple);
+router.use(
   '/',
   (docData = (req, res) => {
     let docData = {
@@ -12,4 +12,4 @@ routes.use(
   })
 );
 
-module.exports = routes;
+module.exports = router;

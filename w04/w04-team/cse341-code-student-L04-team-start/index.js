@@ -1,11 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+
 const swaggerUi = require("swagger-ui-express");
 const swaggerFile = require("./swagger-output.json");
 
 app
-	// .use(cors())
+	.use(cors())
 	.use(express.json())
 	.use(express.urlencoded({ extended: true }))
   .use("/docs-api", swaggerUi.serve, swaggerUi.setup(swaggerFile))

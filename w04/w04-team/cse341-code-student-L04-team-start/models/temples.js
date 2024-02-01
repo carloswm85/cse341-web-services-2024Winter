@@ -4,11 +4,12 @@ module.exports = (mongoose) => {
     mongoose.Schema(
       {
         temple_id: Number,
+        additionalInfo: Boolean,
         name: String,
         location: String,
-        dedicated: String,
-        additionalInfo: Boolean,
+        dedicated: String
       },
+      // Add: createdAt and updatedAt fields to the document
       { timestamps: true }
     )
   );

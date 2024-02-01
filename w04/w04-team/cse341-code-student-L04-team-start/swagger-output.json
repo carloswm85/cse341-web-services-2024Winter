@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Temples API",
-    "description": "This API is made for CSE341 Web Services class. Winter 2024.",
+    "description": "This API is made for CSE341 Web Services class. Winter 2024.\napiKey = Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
     "version": "1.0.0"
   },
   "host": "localhost:8080",
@@ -18,8 +18,11 @@
     }
   },
   "paths": {
-    "/temples/": {
+    "/temples/list": {
       "get": {
+        "tags": [
+          "Teacher"
+        ],
         "description": "",
         "parameters": [
           {
@@ -36,9 +39,49 @@
             "description": "Internal Server Error"
           }
         }
-      },
+      }
+    },
+    "/temples/{temple_id}": {
+      "get": {
+        "tags": [
+          "Teacher"
+        ],
+        "summary": "Some summary...",
+        "description": "Some description...",
+        "operationId": "Your_operationId_here",
+        "parameters": [
+          {
+            "name": "temple_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "apiKey",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/temples/create": {
       "post": {
-        "description": "apiKey = Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
+        "tags": [
+          "Teacher"
+        ],
+        "description": "",
         "parameters": [
           {
             "name": "body",
@@ -52,10 +95,13 @@
                 "temple_id": {
                   "example": "any"
                 },
-                "description": {
+                "additionalInfo": {
                   "example": "any"
                 },
                 "location": {
+                  "example": "any"
+                },
+                "description": {
                   "example": "any"
                 }
               }
@@ -75,35 +121,11 @@
         }
       }
     },
-    "/temples/{temple_id}": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "temple_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "apiKey",
-            "in": "header",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
+    "/temples/update/{temple_id}": {
       "put": {
+        "tags": [
+          "Assignment"
+        ],
         "description": "",
         "parameters": [
           {
@@ -111,6 +133,27 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "additionalInfo": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -127,8 +170,13 @@
             "description": "Internal Server Error"
           }
         }
-      },
+      }
+    },
+    "/temples/delete/{temple_id}": {
       "delete": {
+        "tags": [
+          "Assignment"
+        ],
         "description": "",
         "parameters": [
           {
@@ -144,6 +192,38 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/temples/deleteAll": {
+      "delete": {
+        "tags": [
+          "Assignment"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/temples/list/additionalInfo": {
+      "get": {
+        "tags": [
+          "Assignment"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"

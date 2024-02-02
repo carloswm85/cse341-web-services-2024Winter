@@ -137,7 +137,7 @@ https: exports.update = async (req, res) => {
 exports.delete = (req, res) => {
 	// #swagger.tags = ['Assignment']
 
-	const id = req.params.temple_id;
+	const id = req.params._id;
 
 	TempleMod.findByIdAndDelete(id)
 		.then((data) => {

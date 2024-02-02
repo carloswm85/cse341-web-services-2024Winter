@@ -172,7 +172,7 @@
         }
       }
     },
-    "/temples/delete/{temple_id}": {
+    "/temples/delete/{_id}": {
       "delete": {
         "tags": [
           "Assignment"
@@ -180,7 +180,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "temple_id",
+            "name": "_id",
             "in": "path",
             "required": true,
             "type": "string"

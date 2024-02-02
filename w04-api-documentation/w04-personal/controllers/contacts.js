@@ -73,37 +73,43 @@ const postItem = async (req, res, next) => {
 // PUT
 const putItem = async (req, res, next) => {
 	// #swagger.tags = ['Not Working']
+
+	/*  #swagger.parameters['body'] = {
+            in: 'body',
+            required: false,
+            schema: {
+								firstName: "any",
+								lastName: "any",
+								email: "any",
+								favoriteColor: "any",
+								birthday: "any"
+            }
+  } */
+
 	const collection = await mongodbInstance
 		.getDb()
 		.db(DATABASE)
 		.collection(COLLECTION);
-		
-		
-		try {
-			const selectedId = req.params._id;
-			// Create a filter for items with the selected id
-			const filter = { _id: new ObjectId(selectedId) };
-			
-			// Specify the update to set a value for the plot field
-			const updatedContact = {
-				firstName: "",
-				lastName: "",
-				email: "",
-				favoriteColor: "",
-				birthday: "",
-			};
 
-		for (const key of Object.keys(req.body)) {
-			if (req.body[key] !== null) {
-				updatedContact[key] = req.body[key];
-			}
-		}
+	try {
+		const selectedId = req.params._id;
+		// Create a filter for items with the selected id
+		const filter = { _id: new ObjectId(selectedId) };
+
+		// Specify the update to set a value for the plot field
+		const updatedContact = {};
 
 		// Type alias UpdateFilter<TSchema>:
 		// https://mongodb.github.io/node-mongodb-native/6.3/types/UpdateFilter.html
 		const updateDoc = {
 			$set: updatedContact,
 		};
+
+		for (const key of Object.keys(req.body)) {
+			if (req.body[key] !== null) {
+				updatedContact[key] = req.body[key];
+			}
+		}
 
 		// Set the upsert option to insert a document if no documents match the filter
 		// Interface FindOneAndUpdateOptions:

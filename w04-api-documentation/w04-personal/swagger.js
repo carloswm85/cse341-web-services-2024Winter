@@ -1,4 +1,6 @@
 const swaggerAutogen = require("swagger-autogen")();
+const dotenv = require("dotenv");
+dotenv.config();
 
 const isLocalhost = true;
 
@@ -9,8 +11,8 @@ const SCHEMES = isLocalhost ? ["http", "https"] : ["https", "http"];;
 
 const doc = {
 	info: {
-		title: "Contacts API",
-		description: "My API",
+		title: "Contacts API Title",
+		description: "My API decription.",
 	},
 	host: HOSTING,
 	schemes: SCHEMES,

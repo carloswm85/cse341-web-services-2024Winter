@@ -1,14 +1,19 @@
 const swaggerAutogen = require("swagger-autogen")();
 
-const HOSTING = process.env.LOCAL_HOST;
+const isLocalhost = true;
+
+const PORT = process.env.PORT || 8080;
+
+const HOSTING = isLocalhost ? `localhost:${PORT}` : "w04-personal-assignment-swagger-client.onrender.com";
+const SCHEMES = isLocalhost ? ["http", "https"] : ["https", "http"];;
 
 const doc = {
 	info: {
 		title: "Contacts API",
 		description: "My API",
 	},
-	host: `${HOSTING}`,
-	schemes: ["https", "http"],
+	host: HOSTING,
+	schemes: SCHEMES,
 	securityDefinitions: {
 		api_key: {
 			type: "apiKey",

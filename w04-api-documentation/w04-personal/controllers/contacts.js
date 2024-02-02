@@ -6,6 +6,8 @@ const COLLECTION = process.env.COLLECTION_NAME;
 
 // GET LIST
 const getData = async (req, res, next) => {
+	// #swagger.tags = ['Tested & Working']
+
 	const response = await mongodbInstance
 		.getDb()
 		.db(DATABASE)
@@ -20,7 +22,9 @@ const getData = async (req, res, next) => {
 
 // GET ITEM
 const getItem = async (req, res, next) => {
-	var selectedId = req.params.id;
+	// #swagger.tags = ['Tested & Working']
+
+	var selectedId = req.params._id;
 	const collection = await mongodbInstance
 		.getDb()
 		.db(DATABASE)
@@ -39,6 +43,8 @@ const getItem = async (req, res, next) => {
 
 // POST
 const postItem = async (req, res, next) => {
+	// #swagger.tags = ['Tested & Working']
+
 	const collection = await mongodbInstance
 		.getDb()
 		.db(DATABASE)
@@ -49,7 +55,7 @@ const postItem = async (req, res, next) => {
 		lastName: req.body.lastName,
 		email: req.body.email,
 		favoriteColor: req.body.favoriteColor,
-		birthday: req.body.birthday
+		birthday: req.body.birthday,
 	};
 
 	var response = await collection.insertOne(newContact);
@@ -65,26 +71,27 @@ const postItem = async (req, res, next) => {
 };
 
 // PUT
-// https://www.mongodb.com/docs/manual/reference/method/db.collection.findOneAndUpdate/
 const putItem = async (req, res, next) => {
+	// #swagger.tags = ['Not Working']
 	const collection = await mongodbInstance
 		.getDb()
 		.db(DATABASE)
 		.collection(COLLECTION);
-
-	try {
-		var selectedId = req.params.id;
-		// Create a filter for items with the selected id
-		const filter = { _id: new ObjectId(selectedId) };
-
-		// Specify the update to set a value for the plot field
-		var updatedContact = {
-			firstName: '',
-			lastName: '',
-			email: '',
-			favoriteColor: '',
-			birthday: ''
-		};
+		
+		
+		try {
+			const selectedId = req.params._id;
+			// Create a filter for items with the selected id
+			const filter = { _id: new ObjectId(selectedId) };
+			
+			// Specify the update to set a value for the plot field
+			const updatedContact = {
+				firstName: "",
+				lastName: "",
+				email: "",
+				favoriteColor: "",
+				birthday: "",
+			};
 
 		for (const key of Object.keys(req.body)) {
 			if (req.body[key] !== null) {
@@ -92,12 +99,14 @@ const putItem = async (req, res, next) => {
 			}
 		}
 
+		// Type alias UpdateFilter<TSchema>:
 		// https://mongodb.github.io/node-mongodb-native/6.3/types/UpdateFilter.html
 		const updateDoc = {
 			$set: updatedContact,
 		};
 
 		// Set the upsert option to insert a document if no documents match the filter
+		// Interface FindOneAndUpdateOptions:
 		// https://mongodb.github.io/node-mongodb-native/4.0/interfaces/findoneandupdateoptions.html
 		const options = { upsert: false };
 
@@ -124,7 +133,8 @@ const putItem = async (req, res, next) => {
 
 // DELETE
 const deleteItem = async (req, res, next) => {
-	var selectedId = req.params.id;
+	// #swagger.tags = ['Tested & Working']
+	var selectedId = req.params._id;
 	const collection = await mongodbInstance
 		.getDb()
 		.db(DATABASE)

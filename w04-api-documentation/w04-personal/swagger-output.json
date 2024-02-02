@@ -5,11 +5,11 @@
     "description": "My API",
     "version": "1.0.0"
   },
-  "host": "undefined",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
-    "https",
-    "http"
+    "http",
+    "https"
   ],
   "securityDefinitions": {
     "api_key": {
@@ -21,6 +21,9 @@
   "paths": {
     "/assignments/contacts/list": {
       "get": {
+        "tags": [
+          "Tested & Working"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -32,15 +35,18 @@
         }
       }
     },
-    "/assignments/contacts/retrieve/{id}": {
+    "/assignments/contacts/retrieve/{_id}": {
       "get": {
+        "tags": [
+          "Tested & Working"
+        ],
         "description": "",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -58,6 +64,9 @@
     },
     "/assignments/contacts/create": {
       "post": {
+        "tags": [
+          "Tested & Working"
+        ],
         "description": "",
         "parameters": [
           {
@@ -95,12 +104,15 @@
         }
       }
     },
-    "/assignments/contacts/update/{id}": {
+    "/assignments/contacts/update/{_id}": {
       "put": {
+        "tags": [
+          "Not Working"
+        ],
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -116,12 +128,15 @@
         }
       }
     },
-    "/assignments/contacts/delete/{id}": {
+    "/assignments/contacts/delete/{_id}": {
       "delete": {
+        "tags": [
+          "Tested & Working"
+        ],
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "_id",
             "in": "path",
             "required": true,
             "type": "string"

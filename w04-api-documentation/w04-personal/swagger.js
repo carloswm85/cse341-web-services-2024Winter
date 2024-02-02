@@ -2,7 +2,7 @@ const swaggerAutogen = require("swagger-autogen")();
 const dotenv = require("dotenv");
 dotenv.config();
 
-const isLocalhost = true;
+const isLocalhost = false;
 
 const PORT = process.env.PORT || 8080;
 

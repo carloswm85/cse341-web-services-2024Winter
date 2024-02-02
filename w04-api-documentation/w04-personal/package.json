@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "start-production": "node app.js",
+    "deploy": "npm run swagger && npm run production",
+    "production": "node ./app.js",
     "swagger": "node ./swagger.js"
   },
   "keywords": [],

@@ -1,8 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require("cors");
 
 const connection = require('./db/connect');
-const routes = require('./routes/contactsRoute');
+const routes = require('./routes');
+
+const swaggerUi = require("swagger-ui-express");
+const swaggerFile = require("./swagger-output.json");
 
 const PORT = process.env.PORT || 8080;
 const USERNAME = process.env.USER_NAME;
@@ -15,11 +19,14 @@ const app = express();
 
 app
 	.use(bodyParser.json())
-	.use((req, res, next) => {
-		res.setHeader('Access-Control-Allow-Origin', '*');
-		next();
-	})
-	.use(`/${ROUTE}`, routes);
+	// .use(cors())
+	// .use((req, res, next) => {
+	// 	res.setHeader("Access-Control-Allow-Origin", "*");
+	// 	next();
+	// })
+	.use("/docs-api", swaggerUi.serve, swaggerUi.setup(swaggerFile))
+	.use(`/`, routes)
+	;
 
 connection.initDb((err, mongodb) => {
 	if (err) {
@@ -28,5 +35,6 @@ connection.initDb((err, mongodb) => {
 		app.listen(PORT);
 		console.log(`Connected to DB and listening on ${PORT}`);
 		console.log(`http://localhost:${PORT}/${ROUTE}/${SUBROUTE}/list`);
+  	console.log(`API documentation: http://localhost:${PORT}/docs-api`);
 	}
 })

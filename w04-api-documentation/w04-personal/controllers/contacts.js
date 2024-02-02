@@ -47,6 +47,8 @@ const postItem = async (req, res, next) => {
 	var newItem = req.body;
 	var response = await collection.insertOne(newItem);
 
+	
+
 	if (response != undefined) {
 		res.status(201).json({
 			message: `Operation successful. New item _id is: ${response.insertedId}`,

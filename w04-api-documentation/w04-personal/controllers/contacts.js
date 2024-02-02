@@ -72,8 +72,10 @@ const postItem = async (req, res, next) => {
 
 // PUT
 const putItem = async (req, res, next) => {
-	// #swagger.tags = ['Not Working']
+	// #swagger.tags = ['Tested & Working']
 
+	// IMPORTANT
+	// This comment is required for the swagger-autogen tool
 	/*  #swagger.parameters['body'] = {
             in: 'body',
             required: false,

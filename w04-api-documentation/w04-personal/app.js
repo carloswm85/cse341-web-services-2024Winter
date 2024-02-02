@@ -34,7 +34,7 @@ app
 		);
 		next();
 	})
-	.use("/docs-api", swaggerUi.serve, swaggerUi.setup(swaggerFile))
+	.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile))
 	.use(`/`, routes);
 
 connection.initDb((err, mongodb) => {
@@ -44,6 +44,6 @@ connection.initDb((err, mongodb) => {
 		app.listen(PORT);
 		console.log(`Connected to DB and listening on ${PORT}`);
 		console.log(`http://localhost:${PORT}/${ROUTE}/${SUBROUTE}/list`);
-		console.log(`API documentation: http://localhost:${PORT}/docs-api`);
+		console.log(`API documentation: http://localhost:${PORT}/api-docs`);
 	}
 });

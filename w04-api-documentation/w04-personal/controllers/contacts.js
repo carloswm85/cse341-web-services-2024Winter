@@ -78,15 +78,14 @@ const putItem = async (req, res, next) => {
 		const filter = { _id: new ObjectId(selectedId) };
 
 		// Specify the update to set a value for the plot field
-		// var updatedContact = {
-		// 	firstName: req.body.firstName,
-		// 	lastName: req.body.lastName,
-		// 	email: req.body.email,
-		// 	favoriteColor: req.body.favoriteColor,
-		// 	birthday: req.body.birthday,
-		// };
+		var updatedContact = {
+			firstName: '',
+			lastName: '',
+			email: '',
+			favoriteColor: '',
+			birthday: ''
+		};
 
-		const updatedContact = {};
 		for (const key of Object.keys(req.body)) {
 			if (req.body[key] !== null) {
 				updatedContact[key] = req.body[key];

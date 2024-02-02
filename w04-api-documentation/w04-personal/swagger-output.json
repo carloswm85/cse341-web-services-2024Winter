@@ -5,11 +5,11 @@
     "description": "My API",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "undefined",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "securityDefinitions": {
     "api_key": {

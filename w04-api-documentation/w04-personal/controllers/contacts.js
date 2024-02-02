@@ -44,10 +44,15 @@ const postItem = async (req, res, next) => {
 		.db(DATABASE)
 		.collection(COLLECTION);
 
-	var newItem = req.body;
-	var response = await collection.insertOne(newItem);
+	var newContact = {
+		firstName: req.body.firstName,
+		lastName: req.body.lastName,
+		email: req.body.email,
+		favoriteColor: req.body.favoriteColor,
+		birthday: req.body.birthday
+	};
 
-	
+	var response = await collection.insertOne(newContact);
 
 	if (response != undefined) {
 		res.status(201).json({
@@ -60,6 +65,7 @@ const postItem = async (req, res, next) => {
 };
 
 // PUT
+// https://www.mongodb.com/docs/manual/reference/method/db.collection.findOneAndUpdate/
 const putItem = async (req, res, next) => {
 	const collection = await mongodbInstance
 		.getDb()
@@ -71,20 +77,30 @@ const putItem = async (req, res, next) => {
 		// Create a filter for items with the selected id
 		const filter = { _id: new ObjectId(selectedId) };
 
-		// Set the upsert option to insert a document if no documents match the filter
-		const options = { upsert: false };
-
 		// Specify the update to set a value for the plot field
+		// var updatedContact = {
+		// 	firstName: req.body.firstName,
+		// 	lastName: req.body.lastName,
+		// 	email: req.body.email,
+		// 	favoriteColor: req.body.favoriteColor,
+		// 	birthday: req.body.birthday,
+		// };
+
+		const updatedContact = {};
+		for (const key of Object.keys(req.body)) {
+			if (req.body[key] !== null) {
+				updatedContact[key] = req.body[key];
+			}
+		}
+
+		// https://mongodb.github.io/node-mongodb-native/6.3/types/UpdateFilter.html
 		const updateDoc = {
-			$set: {
-				_id: new ObjectId(selectedId),
-				firstName: req.body["firstName"],
-				lastName: req.body["lastName"],
-				email: req.body["email"],
-				favoriteColor: req.body["favoriteColor"],
-				birthday: req.body["birthday"],
-			},
+			$set: updatedContact,
 		};
+
+		// Set the upsert option to insert a document if no documents match the filter
+		// https://mongodb.github.io/node-mongodb-native/4.0/interfaces/findoneandupdateoptions.html
+		const options = { upsert: false };
 
 		// Update the first document that matches the filter
 		var response = await collection.findOneAndUpdate(
@@ -98,7 +114,7 @@ const putItem = async (req, res, next) => {
 			console.log(
 				`${response.matchedCount} document(s) matched the filter, updated ${response.modifiedCount} document(s)`
 			);
-			res.status(204);
+			res.status(200);
 			res.json(response);
 			console.log("Item was updated.");
 		}

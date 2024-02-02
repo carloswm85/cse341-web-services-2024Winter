@@ -8,7 +8,7 @@ const doc = {
 		description: "My API",
 	},
 	host: "w04-personal-assignment-swagger-client.onrender.com",
-	schemes: ["http"],
+	schemes: ["https", "http"],
 	securityDefinitions: {
 		api_key: {
 			type: "apiKey",

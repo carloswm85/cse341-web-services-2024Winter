@@ -9,7 +9,7 @@ const doc = {
 			"My API",
 	},
 	host: `localhost:${PORT}`,
-	schemes: ["http"],
+	schemes: ["http", "https"],
 	securityDefinitions: {
 		api_key: {
 			type: "apiKey",

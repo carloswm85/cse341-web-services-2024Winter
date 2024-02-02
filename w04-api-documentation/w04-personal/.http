@@ -1,0 +1,58 @@
+// .http file is used for REMOTE development
+@port = 
+@hostnameOrCluster = https://w03-personal-assignament-web-service.onrender.com
+@route = assignments
+@subroute = contacts
+@collection = 
+@currentTime = {{$datetime iso8601}}
+@randomInt = {{$randomInt 5 200}}
+
+// -------------------------------------------------------------------- REQUESTS
+###
+// FOR TESTING
+GET {{hostnameOrCluster}}{{port}} HTTP/1.1
+
+###
+// FOR TESTING
+GET {{hostnameOrCluster}}{{port}}/{{route}} HTTP/1.1
+
+###
+// GET LIST
+GET {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/list HTTP/1.1
+
+###
+// NEW ITEM
+POST {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/create HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Carlos {{randomInt}}",
+	"lastName": "Mercado",
+	"email": "carlos@gmail.com",
+	"favoriteColor": "blue",
+	"birthday": "{{currentTime}}"
+}
+
+###
+// GET SINGLE ITEM
+@itemId = 65b8526a036fb390f48e1879
+GET {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/retrieve/{{itemId}} HTTP/1.1
+
+###
+// UPDATE ITEM
+@updateItemId = 65b8526a036fb390f48e1879
+PUT {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/update/{{updateItemId}} HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "CHANGED Carlitos {{randomInt}}",
+	"lastName": "Mercadito",
+	"email": "carlos@gmail.com",
+	"favoriteColor": "blue",
+	"birthday": "{{currentTime}}"
+}
+
+###
+// DELETE ITEM
+@deleteItemId = 65b8526a036fb390f48e1879
+DELETE {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/delete/{{deleteItemId}} HTTP/1.1

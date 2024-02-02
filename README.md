@@ -1,6 +1,11 @@
 # CSE 341 - Web Services - Winter 2024
 
 - This read me file contains the most important and interesting stuffs from this class.
+- Content:
+  - Node projects
+  - MongoDB
+  - Render, web hosting
+  - API documentation, with Swagger
 
 ## Week 02
 

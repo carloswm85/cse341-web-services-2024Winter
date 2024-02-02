@@ -36,12 +36,12 @@ content-type: application/json
 
 ###
 // GET SINGLE ITEM
-@itemId = 65b8526a036fb390f48e1879
+@itemId = 65bd700bc6dead1ab893be52
 GET {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/retrieve/{{itemId}} HTTP/1.1
 
 ###
 // UPDATE ITEM
-@updateItemId = 65b8526a036fb390f48e1879
+@updateItemId = 65bd700bc6dead1ab893be52
 PUT {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/update/{{updateItemId}} HTTP/1.1
 content-type: application/json
 
@@ -55,5 +55,5 @@ content-type: application/json
 
 ###
 // DELETE ITEM
-@deleteItemId = 65b8526a036fb390f48e1879
+@deleteItemId = 65bd700bc6dead1ab893be52
 DELETE {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/delete/{{deleteItemId}} HTTP/1.1

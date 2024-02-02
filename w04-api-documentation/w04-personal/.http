@@ -1,6 +1,6 @@
 // .http file is used for REMOTE development
 @port = 
-@hostnameOrCluster = https://w03-personal-assignament-web-service.onrender.com
+@hostnameOrCluster = https://w04-personal-assignment-swagger-client.onrender.com
 @route = assignments
 @subroute = contacts
 @collection = 
@@ -35,12 +35,12 @@ content-type: application/json
 
 ###
 // GET SINGLE ITEM
-@itemId = 65b8526a036fb390f48e1879
+@itemId = 65bd6facf502523fd9a6580e
 GET {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/retrieve/{{itemId}} HTTP/1.1
 
 ###
 // UPDATE ITEM
-@updateItemId = 65b8526a036fb390f48e1879
+@updateItemId = 65bd6facf502523fd9a6580e
 PUT {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/update/{{updateItemId}} HTTP/1.1
 content-type: application/json
 
@@ -54,5 +54,5 @@ content-type: application/json
 
 ###
 // DELETE ITEM
-@deleteItemId = 65b8526a036fb390f48e1879
+@deleteItemId = 65bd6facf502523fd9a6580e
 DELETE {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/delete/{{deleteItemId}} HTTP/1.1

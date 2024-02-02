@@ -7,7 +7,7 @@ const doc = {
 		title: "Contacts API",
 		description: "My API",
 	},
-	host: "w04-personal-assignment-swagger-client.onrender.com/",
+	host: "w04-personal-assignment-swagger-client.onrender.com",
 	schemes: ["https"],
 	securityDefinitions: {
 		api_key: {

@@ -5,10 +5,9 @@ const PORT = process.env.PORT || 8080;
 const doc = {
 	info: {
 		title: "Contacts API",
-		description:
-			"My API",
+		description: "My API",
 	},
-	host: `localhost:${PORT}`,
+	host: "https://w04-personal-assignment-swagger-client.onrender.com/",
 	schemes: ["http", "https"],
 	securityDefinitions: {
 		api_key: {

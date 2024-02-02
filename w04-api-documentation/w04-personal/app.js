@@ -20,10 +20,10 @@ const app = express();
 app
 	.use(bodyParser.json())
 	.use(cors())
-	// .use((req, res, next) => {
-	// 	res.setHeader("Access-Control-Allow-Origin", "*");
-	// 	next();
-	// })
+	.use((req, res, next) => {
+		res.setHeader("Access-Control-Allow-Origin", "*");
+		next();
+	})
 	.use("/docs-api", swaggerUi.serve, swaggerUi.setup(swaggerFile))
 	.use(`/`, routes)
 	;

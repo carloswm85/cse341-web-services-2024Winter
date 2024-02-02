@@ -1,9 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require("express");
+const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const connection = require('./db/connect');
-const routes = require('./routes');
+const connection = require("./db/connect");
+const routes = require("./routes");
 
 const swaggerUi = require("swagger-ui-express");
 const swaggerFile = require("./swagger-output.json");
@@ -19,14 +19,22 @@ const app = express();
 
 app
 	.use(bodyParser.json())
-	.use(cors())
+	// .use(cors())
 	.use((req, res, next) => {
 		res.setHeader("Access-Control-Allow-Origin", "*");
+		res.setHeader(
+			"Access-Control-Allow-Origin",
+			"Origin, X-Requested-With, Content-Type, Accept, Z-Key"
+		);
+		res.setHeader("Content-Type", "application/json");
+		res.setHeader(
+			"Access-Control-Allow-Methods",
+			"GET, POST, PUT, DELETE, OPTIONS"
+		);
 		next();
 	})
 	.use("/docs-api", swaggerUi.serve, swaggerUi.setup(swaggerFile))
-	.use(`/`, routes)
-	;
+	.use(`/`, routes);
 
 connection.initDb((err, mongodb) => {
 	if (err) {
@@ -35,6 +43,6 @@ connection.initDb((err, mongodb) => {
 		app.listen(PORT);
 		console.log(`Connected to DB and listening on ${PORT}`);
 		console.log(`http://localhost:${PORT}/${ROUTE}/${SUBROUTE}/list`);
-  	console.log(`API documentation: http://localhost:${PORT}/docs-api`);
+		console.log(`API documentation: http://localhost:${PORT}/docs-api`);
 	}
-})
+});

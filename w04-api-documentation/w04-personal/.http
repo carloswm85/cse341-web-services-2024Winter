@@ -1,5 +1,5 @@
 // .http file is used for REMOTE development
-@port = :3000
+@port =
 @hostnameOrCluster = https://w04-personal-assignment-swagger-client.onrender.com
 @route = contacts
 @currentTime = {{$datetime iso8601}}
@@ -26,7 +26,7 @@ content-type: application/json
 
 ###
 // GET SINGLE ITEM
-@newItemId = 65bda6b96fe18160aa69d826
+@newItemId = 65be34eb12b471644c515f39
 GET {{hostnameOrCluster}}{{port}}/{{route}}/{{newItemId}} HTTP/1.1
 
 ###

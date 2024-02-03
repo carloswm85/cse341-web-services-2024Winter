@@ -2,7 +2,7 @@ const swaggerAutogen = require("swagger-autogen")();
 const dotenv = require("dotenv");
 dotenv.config();
 
-const IS_LOCAL_HOST = process.env.IS_LOCAL_HOST;
+const IS_LOCAL_HOST = Boolean(process.env.IS_LOCAL_HOST);
 const PORT = process.env.PORT || 8080;
 
 console.log(`Is localhost: ${IS_LOCAL_HOST}`);

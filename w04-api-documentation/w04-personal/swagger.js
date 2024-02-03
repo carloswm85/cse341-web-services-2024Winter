@@ -2,12 +2,11 @@ const swaggerAutogen = require("swagger-autogen")();
 const dotenv = require("dotenv");
 dotenv.config();
 
-const isLocalhost = false;
-
+const IS_LOCAL_HOST = process.env.IS_LOCAL_HOST;
 const PORT = process.env.PORT || 8080;
 
-const HOSTING = isLocalhost ? `localhost:${PORT}` : "w04-personal-assignment-swagger-client.onrender.com";
-const SCHEMES = isLocalhost ? ["http", "https"] : ["https", "http"];;
+const HOSTING = IS_LOCAL_HOST ? `localhost:${PORT}` : "w04-personal-assignment-swagger-client.onrender.com";
+const SCHEMES = IS_LOCAL_HOST ? ["http", "https"] : ["https", "http"];;
 
 const doc = {
 	info: {

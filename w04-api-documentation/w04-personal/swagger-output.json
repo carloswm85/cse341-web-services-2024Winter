@@ -107,7 +107,7 @@
     "/assignments/contacts/update/{_id}": {
       "put": {
         "tags": [
-          "Not Working"
+          "Tested & Working"
         ],
         "description": "",
         "parameters": [

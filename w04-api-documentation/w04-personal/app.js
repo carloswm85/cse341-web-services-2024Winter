@@ -21,10 +21,12 @@ app
 	.use(bodyParser.json())
 	// .use(cors())
 	.use((req, res, next) => {
+		// https://www.youtube.com/watch?v=fLv6KkCOZ3o
 		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.setHeader(
 			"Access-Control-Allow-Headers",
-			"Origin, X-Requested-With, Content-Type, Accept, Z-Key"
+			// "Origin, X-Requested-With, Content-Type, Accept, Z-Key"
+			"Content-Type"
 		);
 		res.setHeader("Content-Type", "application/json");
 		res.setHeader(

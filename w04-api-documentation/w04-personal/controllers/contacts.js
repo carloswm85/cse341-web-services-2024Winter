@@ -61,9 +61,7 @@ const postItem = async (req, res, next) => {
 	var response = await collection.insertOne(newContact);
 
 	if (response != undefined) {
-		res.status(201).json({
-			message: `Operation successful. New item _id is: ${response.insertedId}`,
-		});
+		res.status(201).json(response);
 		console.log(response.insertedId);
 	} else {
 		res.status(400).json({ message: "BAD REQUEST" });

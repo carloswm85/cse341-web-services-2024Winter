@@ -19,7 +19,7 @@
     }
   },
   "paths": {
-    "/assignments/contacts/list": {
+    "/contacts/": {
       "get": {
         "tags": [
           "Tested & Working"
@@ -33,36 +33,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/assignments/contacts/retrieve/{_id}": {
-      "get": {
-        "tags": [
-          "Tested & Working"
-        ],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/assignments/contacts/create": {
+      },
       "post": {
         "tags": [
           "Tested & Working"
@@ -104,7 +75,32 @@
         }
       }
     },
-    "/assignments/contacts/update/{_id}": {
+    "/contacts/{_id}": {
+      "get": {
+        "tags": [
+          "Tested & Working"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
       "put": {
         "tags": [
           "Tested & Working"
@@ -156,9 +152,7 @@
             "description": "Bad Request"
           }
         }
-      }
-    },
-    "/assignments/contacts/delete/{_id}": {
+      },
       "delete": {
         "tags": [
           "Tested & Working"

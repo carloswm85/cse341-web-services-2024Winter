@@ -1,28 +1,19 @@
 // .http file is used for REMOTE development
-@port = 
+@port = :3000
 @hostnameOrCluster = https://w04-personal-assignment-swagger-client.onrender.com
-@route = assignments
-@subroute = contacts
-@collection = 
+@route = contacts
 @currentTime = {{$datetime iso8601}}
 @randomInt = {{$randomInt 5 200}}
 
 // -------------------------------------------------------------------- REQUESTS
-###
-// FOR TESTING
-GET {{hostnameOrCluster}}{{port}} HTTP/1.1
-
-###
-// FOR TESTING
-GET {{hostnameOrCluster}}{{port}}/{{route}} HTTP/1.1
 
 ###
 // GET LIST
-GET {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/list HTTP/1.1
+GET {{hostnameOrCluster}}{{port}}/{{route}}/ HTTP/1.1
 
 ###
 // NEW ITEM
-POST {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/create HTTP/1.1
+POST {{hostnameOrCluster}}{{port}}/{{route}}/ HTTP/1.1
 content-type: application/json
 
 {
@@ -35,13 +26,12 @@ content-type: application/json
 
 ###
 // GET SINGLE ITEM
-@itemId = 65bd6facf502523fd9a6580e
-GET {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/retrieve/{{itemId}} HTTP/1.1
+@newItemId = 65bda6b96fe18160aa69d826
+GET {{hostnameOrCluster}}{{port}}/{{route}}/{{newItemId}} HTTP/1.1
 
 ###
 // UPDATE ITEM
-@updateItemId = 65bd6facf502523fd9a6580e
-PUT {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/update/{{updateItemId}} HTTP/1.1
+PUT {{hostnameOrCluster}}{{port}}/{{route}}/{{newItemId}} HTTP/1.1
 content-type: application/json
 
 {
@@ -54,5 +44,4 @@ content-type: application/json
 
 ###
 // DELETE ITEM
-@deleteItemId = 65bd6facf502523fd9a6580e
-DELETE {{hostnameOrCluster}}{{port}}/{{route}}/{{subroute}}/delete/{{deleteItemId}} HTTP/1.1
+DELETE {{hostnameOrCluster}}{{port}}/{{route}}/{{newItemId}} HTTP/1.1

@@ -7,19 +7,19 @@ const routes = express.Router();
 // GET all, GET by id, POST, PUT and DELETE
 
 // GET LIST
-routes.get('/contacts/list', contactsController.getData);
+routes.get('/contacts/', contactsController.getData);
 
 // GET ITEM
-routes.get('/contacts/retrieve/:_id', contactsController.getItem);
+routes.get('/contacts/:_id', contactsController.getItem);
 
 // POST
-routes.post('/contacts/create', contactsController.postItem);
+routes.post('/contacts/', contactsController.postItem);
 
 // PUT
-routes.put("/contacts/update/:_id", contactsController.putItem);
+routes.put("/contacts/:_id", contactsController.putItem);
 
 // DELETE
-routes.delete('/contacts/delete/:_id', contactsController.deleteItem);
+routes.delete('/contacts/:_id', contactsController.deleteItem);
 
 // localhost:8080/contactos/
 module.exports = routes;

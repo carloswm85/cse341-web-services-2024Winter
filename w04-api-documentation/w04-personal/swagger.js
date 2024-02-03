@@ -2,10 +2,10 @@ const swaggerAutogen = require("swagger-autogen")();
 const dotenv = require("dotenv");
 dotenv.config();
 
-const isLocalHost = false;
+const isLocalHost = true;
 const PORT = process.env.PORT || 8080;
 
-console.log(`Is production: ${isLocalHost}`);
+console.log(`Is localhost: ${isLocalHost}`);
 
 const HOSTING = isLocalHost
 	? `localhost:${PORT}`

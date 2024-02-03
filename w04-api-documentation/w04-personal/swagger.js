@@ -5,7 +5,7 @@ dotenv.config();
 const IS_PROD_HOST = Boolean(process.env.IS_PROD_HOST);
 const PORT = process.env.PORT || 8080;
 
-console.log(`Is localhost: ${IS_PROD_HOST}`);
+console.log(`Is production: ${IS_PROD_HOST}`);
 
 const HOSTING = IS_PROD_HOST
 	? "w04-personal-assignment-swagger-client.onrender.com"

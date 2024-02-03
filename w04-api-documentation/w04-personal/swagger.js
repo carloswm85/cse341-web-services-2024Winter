@@ -5,6 +5,8 @@ dotenv.config();
 const IS_LOCAL_HOST = process.env.IS_LOCAL_HOST;
 const PORT = process.env.PORT || 8080;
 
+console.log(`Is localhost: ${IS_LOCAL_HOST}`);
+
 const HOSTING = IS_LOCAL_HOST ? `localhost:${PORT}` : "w04-personal-assignment-swagger-client.onrender.com";
 const SCHEMES = IS_LOCAL_HOST ? ["http", "https"] : ["https", "http"];;
 

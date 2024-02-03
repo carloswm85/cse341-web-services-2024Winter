@@ -2,6 +2,7 @@ const router = require("express").Router();
 const contacts = require("./contacts");
 
 router.use("/assignments", contacts);
+router.use("/", require("./swagger"));
 router.use(
 	"/",
 	(docData = (req, res) => {

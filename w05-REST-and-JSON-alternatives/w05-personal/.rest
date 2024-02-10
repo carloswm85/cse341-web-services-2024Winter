@@ -1,0 +1,47 @@
+// .rest file is used for LOCAL development
+@port = :3000
+@hostnameOrCluster = http://localhost
+@route = contacts
+@currentTime = {{$datetime iso8601}}
+@randomInt = {{$randomInt 5 200}}
+
+// -------------------------------------------------------------------- REQUESTS
+
+###
+// GET LIST
+GET {{hostnameOrCluster}}{{port}}/{{route}}/ HTTP/1.1
+
+###
+// NEW ITEM
+POST {{hostnameOrCluster}}{{port}}/{{route}}/ HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Carlos {{randomInt}}",
+	"lastName": "Mercado",
+	"email": "carlos@gmail.com",
+	"favoriteColor": "blue",
+	"birthday": "{{currentTime}}"
+}
+
+###
+// GET SINGLE ITEM
+@newItemId = 65bda6b96fe18160aa69d826
+GET {{hostnameOrCluster}}{{port}}/{{route}}/{{newItemId}} HTTP/1.1
+
+###
+// UPDATE ITEM
+PUT {{hostnameOrCluster}}{{port}}/{{route}}/{{newItemId}} HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "CHANGED Carlitos {{randomInt}}",
+	"lastName": "Mercadito",
+	"email": "carlos@gmail.com",
+	"favoriteColor": "blue",
+	"birthday": "{{currentTime}}"
+}
+
+###
+// DELETE ITEM
+DELETE {{hostnameOrCluster}}{{port}}/{{route}}/{{newItemId}} HTTP/1.1

@@ -5,11 +5,11 @@
     "description": "My API decription.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "w04-personal-assignment-swagger-client.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "securityDefinitions": {
     "api_key": {

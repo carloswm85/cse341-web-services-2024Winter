@@ -1,6 +1,14 @@
-1. Connect Node.js API to MongoDBSecurely (cse341 L02 Team Stretch Solution)
-     - https://y3outu.be/S25ggtvC4AM
-2. 2
-3. 3
-4. Deploy Node.js Swagger API Documentation to Heroku (cse341 L04 personal assignment)
-     - https://youtu.be/6SIACHzJe3g
+- [PROJECT IDEA: CMS (Content Management System)](#project-idea-cms-content-management-system)
+  - [Readings](#readings)
+
+--- 
+
+# PROJECT IDEA: CMS (Content Management System)
+
+- A CMS software application allows users to create, manage, and publish digital content like articles, images, and videos.
+
+## Readings
+
+- https://github.com/totaljs/cms/tree/master
+ - ![alt text](am6l001bn41d.png)
+- https://blog.tooljet.com/build-cms-using-lowcode-and-mongodb/

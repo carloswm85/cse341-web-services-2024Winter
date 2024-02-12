@@ -9,13 +9,22 @@ console.log(`Is localhost: ${isLocalHost}`);
 
 const HOSTING = isLocalHost
 	? `localhost:${PORT}`
-	: "w04-personal-assignment-swagger-client.onrender.com";
+	: "w05-personal-assignment-swagger-independent-project.onrender.com";
 const SCHEMES = isLocalHost ? ["http", "https"] : ["https", "http"];
 
 const doc = {
 	info: {
-		title: "Contacts API Title",
-		description: "My API decription.",
+		title: "Content Management Systes API (CMS)",
+		description:
+			"The CMS API is designed to facilitate content management operations for a web-based application. It provides endpoints to manage articles, allowing users to retrieve a list of articles and create new articles. The API is defined using the OpenAPI Specification (OAS), making it easy to understand and integrate into various applications.",
+	},
+	contact: {
+		name: "Carlos Mercado",
+		email: "carlos.washington.mercado@gmail.com",
+	},
+	license: {
+		name: "Your License",
+		url: "https://en.wikipedia.org/wiki/MIT_License",
 	},
 	host: HOSTING,
 	schemes: SCHEMES,
@@ -25,6 +34,16 @@ const doc = {
 			name: "api_key",
 			in: "header",
 		},
+	},
+	tags: [
+		{
+			name: "Articles",
+			description: "Endpoints related to managing articles",
+		},
+	],
+	externalDocs: {
+		description: "CSE341 - Lesson 5: REST & JSON Alternatives",
+		url: "https://cse341.netlify.app/lesson5",
 	},
 };
 

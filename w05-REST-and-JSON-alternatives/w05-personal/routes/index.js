@@ -1,13 +1,13 @@
 const router = require("express").Router();
-const contacts = require("./contacts");
+const authors = require("./authors");
 
-router.use("/", contacts);
+router.use("/", authors);
 router.use("/", require("./swagger"));
 router.use(
 	"/",
 	(docData = (req, res) => {
 		let docData = {
-			documentationURL: "https://cse341.netlify.app/lesson4/assignment",
+			documentationURL: "https://cse341.netlify.app/lesson5",
 		};
 		res.send(docData);
 	})

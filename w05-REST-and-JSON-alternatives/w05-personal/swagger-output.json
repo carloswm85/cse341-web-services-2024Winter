@@ -1,15 +1,21 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Contacts API Title",
-    "description": "My API decription.",
+    "title": "Content Management Systes API (CMS)",
+    "description": "The CMS API is designed to facilitate content management operations for a web-based application. It provides endpoints to manage articles, allowing users to retrieve a list of articles and create new articles. The API is defined using the OpenAPI Specification (OAS), making it easy to understand and integrate into various applications.",
     "version": "1.0.0"
   },
-  "host": "w04-personal-assignment-swagger-client.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
+  "tags": [
+    {
+      "name": "Articles",
+      "description": "Endpoints related to managing articles"
+    }
+  ],
   "schemes": [
-    "https",
-    "http"
+    "http",
+    "https"
   ],
   "securityDefinitions": {
     "api_key": {
@@ -19,10 +25,10 @@
     }
   },
   "paths": {
-    "/contacts/": {
+    "/authors/": {
       "get": {
         "tags": [
-          "Tested & Working"
+          "Authors"
         ],
         "description": "",
         "produces": [
@@ -36,7 +42,7 @@
       },
       "post": {
         "tags": [
-          "Tested & Working"
+          "Authors"
         ],
         "description": "",
         "parameters": [
@@ -46,19 +52,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "author_name": {
                   "example": "any"
                 },
-                "lastName": {
+                "author_email": {
                   "example": "any"
                 },
-                "email": {
-                  "example": "any"
-                },
-                "favoriteColor": {
-                  "example": "any"
-                },
-                "birthday": {
+                "author_image": {
                   "example": "any"
                 }
               }
@@ -75,10 +75,10 @@
         }
       }
     },
-    "/contacts/{_id}": {
+    "/authors/{id}": {
       "get": {
         "tags": [
-          "Tested & Working"
+          "Authors"
         ],
         "description": "",
         "produces": [
@@ -86,7 +86,7 @@
         ],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -98,86 +98,21 @@
           },
           "404": {
             "description": "Not Found"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Tested & Working"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "type": "string",
-                  "example": "any"
-                },
-                "lastName": {
-                  "type": "string",
-                  "example": "any"
-                },
-                "email": {
-                  "type": "string",
-                  "example": "any"
-                },
-                "favoriteColor": {
-                  "type": "string",
-                  "example": "any"
-                },
-                "birthday": {
-                  "type": "string",
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Tested & Working"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
     }
+  },
+  "contact": {
+    "name": "Carlos Mercado",
+    "email": "carlos.washington.mercado@gmail.com"
+  },
+  "license": {
+    "name": "Your License",
+    "url": "https://en.wikipedia.org/wiki/MIT_License"
+  },
+  "externalDocs": {
+    "description": "CSE341 - Lesson 5: REST & JSON Alternatives",
+    "url": "https://cse341.netlify.app/lesson5"
   }
 }

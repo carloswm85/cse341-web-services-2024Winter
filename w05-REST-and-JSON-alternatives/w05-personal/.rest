@@ -1,7 +1,7 @@
 // .rest file is used for LOCAL development
 @port = :3000
 @hostnameOrCluster = http://localhost
-@route = contacts
+@route = authors
 @currentTime = {{$datetime iso8601}}
 @randomInt = {{$randomInt 5 200}}
 
@@ -17,11 +17,9 @@ POST {{hostnameOrCluster}}{{port}}/{{route}}/ HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "Carlos {{randomInt}}",
-	"lastName": "Mercado",
-	"email": "carlos@gmail.com",
-	"favoriteColor": "blue",
-	"birthday": "{{currentTime}}"
+  "author_name": "Carlos Mercado {{randomInt}}",
+	"author_email": "carlos@gmail.com",
+	"author_image": "picture.jpg"
 }
 
 ###
@@ -35,11 +33,9 @@ PUT {{hostnameOrCluster}}{{port}}/{{route}}/{{newItemId}} HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "CHANGED Carlitos {{randomInt}}",
-	"lastName": "Mercadito",
-	"email": "carlos@gmail.com",
-	"favoriteColor": "blue",
-	"birthday": "{{currentTime}}"
+  "author_name": "Carlos Mercado CHANGED",
+	"author_email": "cmercado{{randomInt}}@gmail.com",
+	"author_image": "profile.png"
 }
 
 ###

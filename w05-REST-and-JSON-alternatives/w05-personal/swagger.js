@@ -9,7 +9,7 @@ console.log(`Is localhost: ${isLocalHost}`);
 
 const HOSTING = isLocalHost
 	? `localhost:${PORT}`
-	: "w05-personal-assignment-swagger-independent-project.onrender.com";
+	: "w05-personal-assignment-swagger.onrender.com";
 const SCHEMES = isLocalHost ? ["http", "https"] : ["https", "http"];
 
 const doc = {

@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = (req, res) => {
   mongodb
     .getDb()
-    .db()
+    .db('assignments')
     .collection('contacts')
     .find()
     .toArray((err, lists) => {

@@ -22,5 +22,8 @@ mongodb.initDb((err) => {
   } else {
     app.listen(port);
     console.log(`Connected to DB and listening on ${port}`);
+    console.log(`http://localhost:${port}`);
+    console.log(`http://localhost:${port}/contacts`);
+    console.log(`http://localhost:${port}/api-docs`);
   }
 });

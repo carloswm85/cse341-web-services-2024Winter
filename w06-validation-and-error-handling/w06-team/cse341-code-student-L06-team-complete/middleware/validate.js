@@ -1,6 +1,7 @@
 const validator = require('../helpers/validate');
 
 const saveContact = (req, res, next) => {
+  
   const validationRule = {
     firstName: 'required|string',
     lastName: 'required|string',
@@ -8,7 +9,8 @@ const saveContact = (req, res, next) => {
     favoriteColor: 'required|string',
     birthday: 'string'
   };
-  validator(req.body, validationRule, {}, (err, status) => {
+
+  const ducks = (err, status) => {
     if (!status) {
       res.status(412).send({
         success: false,
@@ -16,9 +18,11 @@ const saveContact = (req, res, next) => {
         data: err
       });
     } else {
-      next();
+      next(); // success: true
     }
-  });
+  };
+
+  validator(req.body, validationRule, {}, ducks);
 };
 
 module.exports = {

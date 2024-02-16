@@ -16,10 +16,10 @@ routes.get("/authors/:id", authorsController.getItem);
 routes.post("/authors/", authorsController.postItem);
 
 // PUT
-// routes.put("/authors/:_id", authorsController.putItem);
+routes.put("/authors/:_id", authorsController.putItem);
 
 // DELETE
-// routes.delete("/authors/:_id", authorsController.deleteItem);
+routes.delete("/authors/:_id", authorsController.deleteItem);
 
 // localhost:8080/contactos/
 module.exports = routes;

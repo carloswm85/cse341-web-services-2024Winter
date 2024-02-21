@@ -5,7 +5,7 @@
     "description": "The CMS API is designed to facilitate content management operations for a web-based application. It provides endpoints to manage articles, allowing users to retrieve a list of articles and create new articles. The API is defined using the OpenAPI Specification (OAS), making it easy to understand and integrate into various applications.",
     "version": "1.0.0"
   },
-  "host": "w06-personal-assignment-swagger.onrender.com/",
+  "host": "w06-personal-assignment-swagger.onrender.com",
   "basePath": "/",
   "tags": [
     {

@@ -60,34 +60,31 @@ const postItem = async (req, res, next) => {
 	// #swagger.tags = ['Authors']
 
 	try {
-		if (
-			!req.body.author_name ||
-			!req.body.author_email ||
-			!req.body.author_image
-		) {
-			res.status(400).send({ message: "Content can not be empty!" });
+		const { author_name, author_email, author_image } = req.body;
+
+		if (!author_name || !author_email || !author_image) {
+			res.status(400).send({ message: "Content cannot be empty!" });
 			return;
 		}
 
-		const collection = await mongodbInstance
+		const collection = mongodbInstance
 			.getDb()
 			.db(DATABASE)
 			.collection(COLLECTION);
 
-		var newAuthor = {
-			author_name: req.body.author_name,
-			author_email: req.body.author_email,
-			author_image: req.body.author_image,
+		const newAuthor = {
+			author_name,
+			author_email,
+			author_image,
 		};
 
-		var response = await collection.insertOne(newAuthor).catch((err) => {
+		const response = await collection.insertOne(newAuthor).catch((err) => {
 			res.status(500).send({
-				message:
-					err.message || "Some error occurred while creating the author.",
+				message: err.message || "Some error occurred while creating the author.",
 			});
 		});
 
-		if (response != undefined) {
+		if (response) {
 			res.status(201).json(response);
 			console.log(response.insertedId);
 		} else {

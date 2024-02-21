@@ -42,13 +42,14 @@ const getItem = async (req, res, next) => {
 
 		var response = await collection.findOne({ _id: new ObjectId(selectedId) });
 
-		if (response != undefined) {
+		if (response == undefined) {
+			res.status(404).json({ message: "Item does not exist" });
 			res.setHeader("Content-Type", "application/json");
 			res.json(response);
-			console.log("Item retrieved.");
-		} else {
-			res.status(404).json({ message: "Does not exist" });
-		}
+			return;
+		} 
+		res.status(200).json(response);
+		res.setHeader("Content-Type", "application/json");
 	} catch (err) {
 		res.status(500).json(err);
 	}

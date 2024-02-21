@@ -7,12 +7,10 @@
 
 // -------------------------------------------------------------------- REQUESTS
 
-###
-// GET LIST
+### GET LIST
 GET {{hostnameOrCluster}}{{port}}/{{route}}/ HTTP/1.1
 
-###
-// NEW ITEM
+### NEW ITEM
 POST {{hostnameOrCluster}}{{port}}/{{route}}/ HTTP/1.1
 content-type: application/json
 
@@ -22,13 +20,11 @@ content-type: application/json
 	"author_image": "picture.jpg"
 }
 
-###
-// GET SINGLE ITEM
+### GET SINGLE ITEM
 @newItemId = 65be34eb12b471644c515f39
 GET {{hostnameOrCluster}}{{port}}/{{route}}/{{newItemId}} HTTP/1.1
 
-###
-// UPDATE ITEM
+### UPDATE ITEM
 PUT {{hostnameOrCluster}}{{port}}/{{route}}/{{newItemId}} HTTP/1.1
 content-type: application/json
 
@@ -38,6 +34,5 @@ content-type: application/json
 	"author_image": "profile.png"
 }
 
-###
-// DELETE ITEM
+### DELETE ITEM
 DELETE {{hostnameOrCluster}}{{port}}/{{route}}/{{newItemId}} HTTP/1.1

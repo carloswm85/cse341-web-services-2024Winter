@@ -8,7 +8,11 @@
 
 - [Lesson 5: REST & JSON Alternatives 🔗](https://cse341.netlify.app/lesson5)
 - [Lesson 6: Validation & Error Handling 🔗](https://cse341.netlify.app/lesson6)
-  - A Clean Approach to Using Express Validator [🔗](https://dev.to/nedsoft/a-clean-approach-to-using-express-validator-8go)
+  - A Clean Approach to Using `express-validator` [🔗](https://dev.to/nedsoft/a-clean-approach-to-using-express-validator-8go)
+    - https://express-validator.github.io/docs/
+  - `validatejs`
+    - [./helpers/validate.js 🔗](https://github.com/byui-cse/cse341-code-student/blob/L06-team-complete/helpers/validate.js)
+    - [./middleware/validate.js 🔗](https://github.com/byui-cse/cse341-code-student/blob/L06-team-complete/middleware/validate.js)
   - Validation in Node js Express Rest API [🔗](https://www.tutsmake.com/validation-in-node-js-express-rest-api/)
   - 7 - JOI Validation Schema to validate request body | Node JS API Authentication [🔗](https://www.youtube.com/watch?v=u9kxYilQ9l8)
   - Node.js Error Handling Made Easy: Best Practices On Just About Everything You Need to Know [🔗](https://sematext.com/blog/node-js-error-handling/)

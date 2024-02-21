@@ -5,7 +5,7 @@
     "description": "The CMS API is designed to facilitate content management operations for a web-based application. It provides endpoints to manage articles, allowing users to retrieve a list of articles and create new articles. The API is defined using the OpenAPI Specification (OAS), making it easy to understand and integrate into various applications.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "w06-personal-assignment-swagger.onrender.com/",
   "basePath": "/",
   "tags": [
     {
@@ -14,8 +14,8 @@
     }
   ],
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "securityDefinitions": {
     "api_key": {
@@ -198,7 +198,7 @@
     "url": "https://en.wikipedia.org/wiki/MIT_License"
   },
   "externalDocs": {
-    "description": "CSE341 - Lesson 5: REST & JSON Alternatives",
-    "url": "https://cse341.netlify.app/lesson5"
+    "description": "CSE341 - Lesson 6: Validation & Error Handling",
+    "url": "https://cse341.netlify.app/lesson6"
   }
 }

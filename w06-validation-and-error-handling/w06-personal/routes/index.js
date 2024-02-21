@@ -7,7 +7,7 @@ router.use(
 	"/",
 	(docData = (req, res) => {
 		let docData = {
-			documentationURL: "https://cse341.netlify.app/lesson5",
+			documentationURL: "https://cse341.netlify.app/lesson6",
 		};
 		res.send(docData);
 	})

@@ -9,7 +9,7 @@ console.log(`Is localhost: ${isLocalHost}`);
 
 const HOSTING = isLocalHost
 	? `localhost:${PORT}`
-	: "w05-personal-assignment-swagger.onrender.com";
+	: "w06-personal-assignment-swagger.onrender.com/";
 const SCHEMES = isLocalHost ? ["http", "https"] : ["https", "http"];
 
 const doc = {
@@ -42,8 +42,8 @@ const doc = {
 		},
 	],
 	externalDocs: {
-		description: "CSE341 - Lesson 5: REST & JSON Alternatives",
-		url: "https://cse341.netlify.app/lesson5",
+		description: "CSE341 - Lesson 6: Validation & Error Handling",
+		url: "https://cse341.netlify.app/lesson6",
 	},
 };
 

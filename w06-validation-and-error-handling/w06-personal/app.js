@@ -14,6 +14,7 @@ const PASS = process.env.USER_PASSWORD;
 const URL = process.env.CLUSTER_URL;
 const ROUTE = process.env.ROUTE;
 const SUBROUTE = process.env.SUBROUTE;
+const RENDER = process.env.RENDER_URI;
 
 const app = express();
 
@@ -44,6 +45,7 @@ connection.initDb((err, mongodb) => {
 		app.listen(PORT);
 		console.log(`Connected to DB and listening on ${PORT}`);
 		console.log(`http://localhost:${PORT}/${ROUTE}/${SUBROUTE}/list`);
-		console.log(`API documentation: http://localhost:${PORT}/api-docs`);
+		console.log(`API documentation - local:	http://localhost:${PORT}/api-docs`);
+		console.log(`API documentation - Render: ${RENDER}/api-docs`);
 	}
 });

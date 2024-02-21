@@ -152,7 +152,7 @@ const putItem = async (req, res, next) => {
 		);
 
 		if (response != undefined) {
-			res.status(200).json(response);
+			res.status(204).json(response);
 		}
 	} catch (err) {
 		res.status(500).json(err);

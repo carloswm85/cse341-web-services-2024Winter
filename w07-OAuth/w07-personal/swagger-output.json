@@ -1,0 +1,204 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Content Management Systes API (CMS)",
+    "description": "The CMS API is designed to facilitate content management operations for a web-based application. It provides endpoints to manage articles, allowing users to retrieve a list of articles and create new articles. The API is defined using the OpenAPI Specification (OAS), making it easy to understand and integrate into various applications.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Articles",
+      "description": "Endpoints related to managing articles"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "paths": {
+    "/authors/": {
+      "get": {
+        "tags": [
+          "Authors"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Authors"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "author_name": {
+                  "example": "any"
+                },
+                "author_email": {
+                  "example": "any"
+                },
+                "author_image": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/authors/{id}": {
+      "get": {
+        "tags": [
+          "Authors"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/authors/{_id}": {
+      "put": {
+        "tags": [
+          "Authors"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "author_name": {
+                  "type": "string",
+                  "example": "any"
+                },
+                "author_email": {
+                  "type": "string",
+                  "example": "any"
+                },
+                "author_image": {
+                  "type": "string",
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Authors"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "name": "Carlos Mercado",
+    "email": "carlos.washington.mercado@gmail.com"
+  },
+  "license": {
+    "name": "Your License",
+    "url": "https://en.wikipedia.org/wiki/MIT_License"
+  },
+  "externalDocs": {
+    "description": "CSE341 - Lesson 6: Validation & Error Handling",
+    "url": "https://cse341.netlify.app/lesson7"
+  }
+}

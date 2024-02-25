@@ -42,7 +42,7 @@ const doc = {
 		},
 	],
 	externalDocs: {
-		description: "CSE341 - Lesson 6: Validation & Error Handling",
+		description: "CSE341 - Lesson 7: OAuth",
 		url: "https://cse341.netlify.app/lesson7",
 	},
 };

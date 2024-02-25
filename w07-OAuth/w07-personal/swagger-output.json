@@ -25,7 +25,47 @@
     }
   },
   "paths": {
-    "/authors/": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/github-authorize/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/github-oauth-callback/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/github-logout/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/authors/authors/": {
       "get": {
         "tags": [
           "Authors"
@@ -84,7 +124,7 @@
         }
       }
     },
-    "/authors/{id}": {
+    "/authors/authors/{id}": {
       "get": {
         "tags": [
           "Authors"
@@ -114,7 +154,7 @@
         }
       }
     },
-    "/authors/{_id}": {
+    "/authors/authors/{_id}": {
       "put": {
         "tags": [
           "Authors"

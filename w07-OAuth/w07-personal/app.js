@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -17,6 +19,9 @@ const SUBROUTE = process.env.SUBROUTE;
 const RENDER = process.env.RENDER_URI;
 
 const app = express();
+
+// Use static files
+app.use(express.static("./static"));
 
 app
 	.use(bodyParser.json())

@@ -32,19 +32,18 @@ const callbackGithub = async ({ query: { code } }, res) => {
 	
 	const opts = { headers: { accept: "application/json" } };
 	
+	// #swagger.tags = ['Authorization']
 	axios
 	.post("https://github.com/login/oauth/access_token", body, opts)
 	.then((_res) => _res.data.access_token)
 	.then((token) => {
-		// eslint-disable-next-line no-console
 		console.log("My token:", token);
 		
-		// #swagger.tags = ['Authorization']
-		
-			res.redirect(`/?token=${token}`);
-		})
+
+		res.redirect(`/?token=${token}`);
+	})
 		.catch((err) => res.status(500).json({ err: err.message }));
-};
+	};
 
 // LOGOUT DRAFT - Not working yet
 const logoutGithub = async (req, res, next) => {

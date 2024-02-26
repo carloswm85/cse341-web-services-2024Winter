@@ -42,8 +42,8 @@ const doc = {
 		},
 	],
 	externalDocs: {
-		description: "CSE341 - Lesson 7: OAuth",
-		url: "https://cse341.netlify.app/lesson7",
+		description: "CSE341 - Lesson 8: OAuth",
+		url: "https://cse341.netlify.app/lesson8",
 	},
 };
 

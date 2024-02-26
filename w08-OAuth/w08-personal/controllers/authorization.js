@@ -23,23 +23,24 @@ const authorizeGithub = async (req, res, next) => {
 
 // CALLBACK FROM GITHUB
 const callbackGithub = async ({ query: { code } }, res) => {
-	// #swagger.tags = ['Authorization']
-
+	
 	const body = {
 		client_id: GITHUB_CLIENT_ID,
 		client_secret: GITHUB_CLIENT_SECRET,
 		code,
 	};
-
+	
 	const opts = { headers: { accept: "application/json" } };
-
+	
 	axios
-		.post("https://github.com/login/oauth/access_token", body, opts)
-		.then((_res) => _res.data.access_token)
-		.then((token) => {
-			// eslint-disable-next-line no-console
-			console.log("My token:", token);
-
+	.post("https://github.com/login/oauth/access_token", body, opts)
+	.then((_res) => _res.data.access_token)
+	.then((token) => {
+		// eslint-disable-next-line no-console
+		console.log("My token:", token);
+		
+		// #swagger.tags = ['Authorization']
+		
 			res.redirect(`/?token=${token}`);
 		})
 		.catch((err) => res.status(500).json({ err: err.message }));

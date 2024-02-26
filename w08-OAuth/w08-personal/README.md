@@ -7,6 +7,7 @@
     - [Hands On](#hands-on)
   - [w08 - OAuth](#w08---oauth)
     - [Explanation](#explanation-2)
+- [Resources](#resources)
 - [PROJECT IDEA: CMS (Content Management System)](#project-idea-cms-content-management-system)
   - [Readings](#readings)
 
@@ -92,6 +93,12 @@
 - JWT meets OAuth:
   - [OAuth vs JWT (JSON Web Tokens): An In-Depth Comparison 🔗](https://supertokens.com/blog/oauth-vs-jwt)
   - [API Keys vs OAuth Tokens vs JSON Web Tokens 🔗](https://zapier.com/engineering/apikey-oauth-jwt/)
+
+---
+
+# Resources
+
+- GitHub OAuth Apps: https://github.com/settings/developers
 
 ---
 

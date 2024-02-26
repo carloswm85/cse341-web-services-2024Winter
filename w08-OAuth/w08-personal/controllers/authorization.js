@@ -47,7 +47,7 @@ const callbackGithub = async ({ query: { code } }, res) => {
 
 // LOGOUT DRAFT - Not working yet
 const logoutGithub = async (req, res, next) => {
-	// const code = req["code"];
+	// #swagger.tags = ['Authorization']
 
 	res.redirect(`https://github.com/`);
 };

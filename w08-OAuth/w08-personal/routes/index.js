@@ -3,8 +3,8 @@ const authors = require("./authors");
 const authorize = require("./authorization");
 
 
-router.use("/", authorize);
 router.use("/authors", authors);
+router.use("/", authorize);
 router.use("/", require("./swagger"));
 router.use(
 	"/",

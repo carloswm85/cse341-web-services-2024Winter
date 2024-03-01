@@ -1,18 +1,27 @@
+/* eslint-disable node/no-unsupported-features/node-builtins */
+/* eslint-disable no-undef */
 const URL_PARAMS = new URLSearchParams(window.location.search);
-const TOKEN = URL_PARAMS.get("token");
+const TOKEN = URL_PARAMS.get('token');
 
-// Show an element
-const show = (selector) => {
-	document.querySelector(selector).style.display = "block";
-	document.querySelector(selector).style.height = "65%";
+// Function to show an element
+const showElement = (selector) => {
+  const element = document.querySelector(selector);
+  if (element) {
+    element.style.display = 'block';
+    element.style.height = '65%';
+  }
 };
 
-// Hide an element
-const hide = (selector) => {
-	document.querySelector(selector).style.display = "none";
+// Function to hide an element
+const hideElement = (selector) => {
+  const element = document.querySelector(selector);
+  if (element) {
+    element.style.display = 'none';
+  }
 };
 
+// Check if TOKEN exists and update UI accordingly
 if (TOKEN) {
-	hide(".content.unauthorized");
-	show(".content.authorized");
+  hideElement('.content.unauthorized');
+  showElement('.content.authorized');
 }

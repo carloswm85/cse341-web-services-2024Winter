@@ -7,6 +7,7 @@
     - [Hands On](#hands-on)
   - [w08 - OAuth](#w08---oauth)
     - [Explanation](#explanation-2)
+    - [Extra](#extra)
 - [Resources](#resources)
 - [PROJECT IDEA: CMS (Content Management System)](#project-idea-cms-content-management-system)
   - [Readings](#readings)
@@ -85,20 +86,33 @@
 
 - OAuth and Swagger:
   - [OAuth 2.0 🔗](https://swagger.io/docs/specification/authentication/oauth2/)
+    -  The OAuth 2.0 Authorization Framework - fc6749 [🔗](https://datatracker.ietf.org/doc/html/rfc6749)
   - [OAuth 2.0 configuration 🔗](https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/)
 - JSON Web Tokens (JWT):
   - [Introduction to JSON Web Tokens 🔗](https://jwt.io/introduction)
+    - JSON Web Token (JWT) - fc7519 [🔗](https://datatracker.ietf.org/doc/html/rfc7519)
   - [What is JWT and how does it work? 🔗](https://www.akana.com/blog/what-is-jwt)
+    - API Basics For the Enterprise [🔗](https://www.akana.com/resources/api-basics)
+    - API Security Best Practices [🔗](https://www.akana.com/resources/api-security-best-practices)
   - [(OPTIONAL) YouTube: What Is JWT and Why Should You Use JWT 🔗](https://www.youtube.com/watch?v=7Q17ubqLfaM) 📺 ~15m
+    - JWT Authentication Tutorial - Node.js [🔗](https://youtu.be/mbsmsi7l3r4) 📺 ~27m
+    - JWT Playground [🔗](https://jwt.io/)
 - JWT meets OAuth:
   - [OAuth vs JWT (JSON Web Tokens): An In-Depth Comparison 🔗](https://supertokens.com/blog/oauth-vs-jwt)
+    - Revoking Access to JWT tokens with a Blacklist/Deny List [🔗](https://supertokens.com/blog/revoking-access-with-a-jwt-blacklist)
+    - OAuth 2.0 vs Session Management [🔗](https://supertokens.com/blog/oauth-2-vs-session-management)
   - [API Keys vs OAuth Tokens vs JSON Web Tokens 🔗](https://zapier.com/engineering/apikey-oauth-jwt/)
+
+### Extra
+
+- Top 3 Things You Should Know About Webhooks! [🔗](https://youtu.be/x_jjhcDrISk)
 
 ---
 
 # Resources
 
-- GitHub OAuth Apps: https://github.com/settings/developers
+- GitHub OAuth Apps - https://github.com/settings/developers
+- supertokens/supertokens-core - https://github.com/supertokens/supertokens-core
 
 ---
 
@@ -109,5 +123,7 @@
 ## Readings
 
 - https://github.com/totaljs/cms/tree/master
-- ![alt text](am6l001bn41d.png)
+
+  ![alt text](am6l001bn41d.png)
+
 - https://blog.tooljet.com/build-cms-using-lowcode-and-mongodb/

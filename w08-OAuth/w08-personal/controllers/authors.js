@@ -4,6 +4,9 @@ const { ObjectId } = require('mongodb');
 const DATABASE = process.env.DATABASE_NAME;
 const COLLECTION = process.env.COLLECTION_ONE;
 
+// Add Data Validation and Error Handling to simple Nodejs Project (cse341 lesson6 team activity)
+// https://youtu.be/S0przpEKKGU
+
 // GET LIST
 const getData = async (req, res, next) => {
   // #swagger.tags = ['Authors']

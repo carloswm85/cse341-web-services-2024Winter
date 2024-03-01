@@ -1,61 +1,124 @@
-- [Class Readings](#class-readings)
-  - [w03 - HTTP Requests \& Dev Tools (and, Linters and Formatters)](#w03---http-requests--dev-tools-and-linters-and-formatters)
-  - [w05 - REST \& JSON Alternatives](#w05---rest--json-alternatives)
-  - [w06 - Validation \& Error Handling](#w06---validation--error-handling)
-    - [Explanation](#explanation)
-  - [w07 - OAuth](#w07---oauth)
-    - [Explanation](#explanation-1)
-    - [Hands On](#hands-on)
-  - [w08 - OAuth](#w08---oauth)
-    - [Explanation](#explanation-2)
-    - [Extra](#extra)
+- [w01 -](#w01--)
+- [w02 -](#w02--)
+- [w03 - HTTP Requests \& Dev Tools (and, Linters and Formatters)](#w03---http-requests--dev-tools-and-linters-and-formatters)
+  - [Linters and Formatters:](#linters-and-formatters)
+- [w04 - API Documentation](#w04---api-documentation)
+  - [API Documentation:](#api-documentation)
+  - [Swagger:](#swagger)
+  - [Other Options:](#other-options)
+  - [Extra:](#extra)
+- [w05 - REST \& JSON Alternatives](#w05---rest--json-alternatives)
+- [w06 - Validation \& Error Handling](#w06---validation--error-handling)
+  - [Validation:](#validation)
+  - [Error Handling:](#error-handling)
+  - [Extra](#extra-1)
+- [w07 - OAuth](#w07---oauth)
+  - [Explanation](#explanation)
+  - [Hands On](#hands-on)
+- [w08 - OAuth](#w08---oauth)
+  - [Explanation](#explanation-1)
+  - [Extra](#extra-2)
+- [w09 -](#w09--)
+- [w10 -](#w10--)
+- [w11 -](#w11--)
+- [w12 -](#w12--)
 - [Resources](#resources)
 - [PROJECT IDEA: CMS (Content Management System)](#project-idea-cms-content-management-system)
   - [Readings](#readings)
 
 ---
 
-# Class Readings
+# w01 -
 
-## w03 - HTTP Requests & Dev Tools (and, Linters and Formatters)
+---
 
-- Linters and Formatters:
-  - [VSCode ESLint, Prettier & Airbnb Style Guide Setup 🔗](https://youtu.be/SydnKbGc7W8)
-    - eslint.org/docs/latest/ [🔗](https://eslint.org/docs/latest/)
-  - [VS Code Autoformatter - Configuring Prettier 🔗](https://youtu.be/wTRe2CjRZ4g)
-  - [Setup ESLINT and PRETTIER in React app 🔗](https://dev.to/knowankit/setup-eslint-and-prettier-in-react-app-357b)
+# w02 -
 
-## w05 - REST & JSON Alternatives
+---
 
-- [Lesson 5: REST & JSON Alternatives 🔗](https://cse341.netlify.app/lesson5)
+# w03 - HTTP Requests & Dev Tools (and, Linters and Formatters)
 
-## w06 - Validation & Error Handling
+- [Lesson 03 🔗](https://cse341.netlify.app/lesson3)
 
-- [Lesson 6: Validation & Error Handling 🔗](https://cse341.netlify.app/lesson6)
+## Linters and Formatters:
 
-### Explanation
+- [VSCode ESLint, Prettier & Airbnb Style Guide Setup 🔗](https://youtu.be/SydnKbGc7W8)
+  - eslint.org/docs/latest/ [🔗](https://eslint.org/docs/latest/)
+- [VS Code Autoformatter - Configuring Prettier 🔗](https://youtu.be/wTRe2CjRZ4g)
+- [Setup ESLINT and PRETTIER in React app 🔗](https://dev.to/knowankit/setup-eslint-and-prettier-in-react-app-357b)
 
-- Validation:
-  - [What is Data Validation? 🔗](https://engage.safe.com/what-is/data-validation/)
-  - A Clean Approach to Using `express-validator` [🔗](https://dev.to/nedsoft/a-clean-approach-to-using-express-validator-8go)
-    - https://express-validator.github.io/docs/
-  - `validatejs`
-    - [./helpers/validate.js 🔗](https://github.com/byui-cse/cse341-code-student/blob/L06-team-complete/helpers/validate.js)
-    - [./middleware/validate.js 🔗](https://github.com/byui-cse/cse341-code-student/blob/L06-team-complete/middleware/validate.js)
-  - Validation in Node js Express Rest API [🔗](https://www.tutsmake.com/validation-in-node-js-express-rest-api/)
-  - 📺 7 - JOI Validation Schema to validate request body | Node JS API Authentication [🔗](https://www.youtube.com/watch?v=u9kxYilQ9l8)
-- Error Handling:
-  - Node.js Error Handling Made Easy: Best Practices On Just About Everything You Need to Know [🔗](https://sematext.com/blog/node-js-error-handling/)
-  - Cleaner code in an Express REST API with unified error handling [🔗](https://www.codepedia.org/ama/cleaner-code-in-expressjs-rest-api-with-custom-error-handling)
-  - 📺 Handling API Errors | RESTful API using NodeJS and MongoDB [🔗](https://www.youtube.com/watch?v=yNO-eA-8Fuo)
-    - https://github.com/trulymittal/Nodejs-REST-API
+---
 
-## w07 - OAuth
+# w04 - API Documentation
 
-- [Lesson 7: OAuth 🔗](https://cse341.netlify.app/lesson7)
+- [Lesson 04 🔗](https://cse341.netlify.app/lesson4)
+
+## API Documentation:
+
+- [(OPTIONAL) Youtube: Intro to API Documentation 🔗](https://youtu.be/5pzhtrrtkXY)
+- [What is API Documentation, and Why It Matters? 🔗](https://swagger.io/blog/api-documentation/what-is-api-documentation-and-why-it-matters/)
+
+## Swagger:
+
+- [What is Swagger? 🔗](https://swagger.io/tools/open-source/getting-started/)
+- [Create swagger.json from scratch (Design First) 🔗](https://support.smartbear.com/swaggerhub/docs/tutorials/getting-started.html)
+- [Create swagger.json npm package (Development First) - `swagger-autogen` 🔗](https://www.npmjs.com/package/swagger-autogen)
+- [swagger-ui-express 🔗](https://www.npmjs.com/package/swagger-ui-express)
+
+## Other Options:
+
+- Be aware that there are other resources for doing very similar types of API documentation. None of them appear to be as widely integrated with npm or as widely used in industry. Two other popular ones are Postman (which started off as just a rest client), and Readme. We will only use Swagger in this course.
+
+## Extra:
+
+- Repo: davibaltar/example-swagger-autogen [🔗](https://github.com/davibaltar/example-swagger-autogen/blob/master/swagger.js)
+
+---
+
+# w05 - REST & JSON Alternatives
+
+- [Lesson 5 🔗](https://cse341.netlify.app/lesson5)
+
+---
+
+# w06 - Validation & Error Handling
+
+- [Lesson 6 🔗](https://cse341.netlify.app/lesson6)
+
+## Validation:
+
+- [What is Data Validation? 🔗](https://engage.safe.com/what-is/data-validation/)
+- A Clean Approach to Using `express-validator` [🔗](https://dev.to/nedsoft/a-clean-approach-to-using-express-validator-8go)
+  - https://express-validator.github.io/docs/
+- `validatejs`
+  - [./helpers/validate.js 🔗](https://github.com/byui-cse/cse341-code-student/blob/L06-team-complete/helpers/validate.js)
+  - [./middleware/validate.js 🔗](https://github.com/byui-cse/cse341-code-student/blob/L06-team-complete/middleware/validate.js)
+- Validation in Node js Express Rest API [🔗](https://www.tutsmake.com/validation-in-node-js-express-rest-api/)
+- 📺 7 - JOI Validation Schema to validate request body | Node JS API Authentication [🔗](https://www.youtube.com/watch?v=u9kxYilQ9l8)
+
+## Error Handling:
+
+- Node.js Error Handling Made Easy: Best Practices On Just About Everything You Need to Know [🔗](https://sematext.com/blog/node-js-error-handling/)
+- Cleaner code in an Express REST API with unified error handling [🔗](https://www.codepedia.org/ama/cleaner-code-in-expressjs-rest-api-with-custom-error-handling)
+- 📺 Handling API Errors | RESTful API using NodeJS and MongoDB [🔗](https://www.youtube.com/watch?v=yNO-eA-8Fuo)
+  - https://github.com/trulymittal/Nodejs-REST-API
+
+## Extra
+
+- From teacher:
+  - `user.js` [🔗](https://github.com/byui-cse/cse341-code-student/tree/L06-personal-solution-example)
+  - Error handling video [🔗](https://youtu.be/S0przpEKKGU)
+  - `validate.js` video [🔗](https://youtu.be/S0przpEKKGU?si=3htSi66dToezA5HI&t=631)
+- [How to handle data validation in Node.js using validatorjs 🔗](https://blog.logrocket.com/handle-data-validation-node-js-validatorjs/)
+
+---
+
+# w07 - OAuth
+
+- [Lesson 7 🔗](https://cse341.netlify.app/lesson7)
   - Class Solution [🔗](https://github.com/byui-cse/cse341-code-student/tree/L07-class-complete?tab=readme-ov-file)
 
-### Explanation
+## Explanation
 
 - Authentication Overview:
   - [Website Authentication: The Complete Guide with FAQs 🔗](https://swoopnow.com/website-authentication/)
@@ -75,7 +138,7 @@
   - [Differences Between OAuth 1 and 2 🔗](https://www.oauth.com/oauth2-servers/differences-between-oauth-1-2/)
   - [OAuth 2.0: Benefits and use cases — why? 🔗](https://stackoverflow.com/questions/7561631/oauth-2-0-benefits-and-use-cases-why)
 
-### Hands On
+## Hands On
 
 - Getting Started with OAuth:
   - [Simplified Oauth 2.0 Tutorial - Example with Node.js 🔗](https://youtu.be/PdFdd4N6LtI) 📺 ~11m
@@ -86,12 +149,14 @@
 - Extra:
   - NodeJS & Express - Google OAuth2 using PassportJS [🔗](https://youtu.be/Q0a0594tOrc) 📺 ~20m
 
-## w08 - OAuth
+---
 
-- [Lesson 8: OAuth 🔗](https://cse341.netlify.app/lesson8)
+# w08 - OAuth
+
+- [Lesson 8 🔗](https://cse341.netlify.app/lesson8)
   - Class Solution [🔗](https://github.com/byui-cse/cse341-code-student/branches/all?query=L08)
 
-### Explanation
+## Explanation
 
 - OAuth and Swagger:
   - [OAuth 2.0 🔗](https://swagger.io/docs/specification/authentication/oauth2/)
@@ -112,9 +177,33 @@
     - OAuth 2.0 vs Session Management [🔗](https://supertokens.com/blog/oauth-2-vs-session-management)
   - [API Keys vs OAuth Tokens vs JSON Web Tokens 🔗](https://zapier.com/engineering/apikey-oauth-jwt/)
 
-### Extra
+## Extra
 
 - Top 3 Things You Should Know About Webhooks! [🔗](https://youtu.be/x_jjhcDrISk)
+
+---
+
+# w09 -
+
+- [Lesson 9 🔗]()
+
+---
+
+# w10 -
+
+- [Lesson 10 🔗]()
+
+---
+
+# w11 -
+
+- [Lesson 11 🔗]()
+
+---
+
+# w12 -
+
+- [Lesson 12 🔗]()
 
 ---
 

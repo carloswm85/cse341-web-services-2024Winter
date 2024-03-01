@@ -1,3 +1,6 @@
+// LINKS
+// https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/
+
 const axios = require("axios");
 const path = require("path");
 

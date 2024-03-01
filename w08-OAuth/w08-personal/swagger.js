@@ -60,3 +60,9 @@ swaggerAutogen(outputFile, routes, doc);
 // swaggerAutogen(outputFile, endpointsFiles, doc).then(async () => {
 //   await import('./index.js');
 // });
+
+/* READINGS */
+/**
+ * Swagger 2.0 - https://www.npmjs.com/package/swagger-autogen/v/2.13.1#swagger-20
+ * OAuth 2.0 configuration - https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/
+ */

@@ -1,4 +1,5 @@
 - [Class Readings](#class-readings)
+  - [w03 - HTTP Requests \& Dev Tools (and, Linters and Formatters)](#w03---http-requests--dev-tools-and-linters-and-formatters)
   - [w05 - REST \& JSON Alternatives](#w05---rest--json-alternatives)
   - [w06 - Validation \& Error Handling](#w06---validation--error-handling)
     - [Explanation](#explanation)
@@ -15,6 +16,14 @@
 ---
 
 # Class Readings
+
+## w03 - HTTP Requests & Dev Tools (and, Linters and Formatters)
+
+- Linters and Formatters:
+  - [VSCode ESLint, Prettier & Airbnb Style Guide Setup 🔗](https://youtu.be/SydnKbGc7W8)
+    - eslint.org/docs/latest/ [🔗](https://eslint.org/docs/latest/)
+  - [VS Code Autoformatter - Configuring Prettier 🔗](https://youtu.be/wTRe2CjRZ4g)
+  - [Setup ESLINT and PRETTIER in React app 🔗](https://dev.to/knowankit/setup-eslint-and-prettier-in-react-app-357b)
 
 ## w05 - REST & JSON Alternatives
 

@@ -2,14 +2,11 @@ const mongodbInstance = require('../db/connect');
 const { ObjectId } = require('mongodb');
 
 const DATABASE = process.env.DATABASE_NAME;
-const COLLECTION = process.env.COLLECTION_AUTHORS;
-
-// Add Data Validation and Error Handling to simple Nodejs Project (cse341 lesson6 team activity)
-// https://youtu.be/S0przpEKKGU
+const COLLECTION = process.env.COLLECTION_POSTS;
 
 // GET LIST
 const getData = async (req, res) => {
-  // #swagger.tags = ['Authors']
+  // #swagger.tags = ['Posts']
 
   try {
     const response = await mongodbInstance.getDb().db(DATABASE).collection(COLLECTION).find();
@@ -30,7 +27,7 @@ const getData = async (req, res) => {
 
 // GET ITEM
 const getItem = async (req, res) => {
-  // #swagger.tags = ['Authors']
+  // #swagger.tags = ['Posts']
 
   try {
     var selectedId = req.params.id;
@@ -53,27 +50,31 @@ const getItem = async (req, res) => {
 
 // POST
 const postItem = async (req, res) => {
-  // #swagger.tags = ['Authors']
+  // #swagger.tags = ['Posts']
 
   try {
-    const { author_name, author_email, author_image } = req.body;
+    const { title, subtitle, content, cover, author_name, tag_name, published_on } = req.body;
 
-    if (!author_name || !author_email || !author_image) {
+    if (!title || !subtitle || !content || !cover || !author_name || !tag_name || !published_on) {
       res.status(400).send({ message: 'Content cannot be empty!' });
       return;
     }
 
     const collection = mongodbInstance.getDb().db(DATABASE).collection(COLLECTION);
 
-    const newAuthor = {
+    const newPost = {
+      title,
+      subtitle,
+      content,
+      cover,
       author_name,
-      author_email,
-      author_image
+      tag_name,
+      published_on
     };
 
-    const response = await collection.insertOne(newAuthor).catch((err) => {
+    const response = await collection.insertOne(newPost).catch((err) => {
       res.status(500).send({
-        message: err.message || 'Some error occurred while creating the author.'
+        message: err.message || 'Some error occurred while creating the post.'
       });
     });
 
@@ -89,7 +90,7 @@ const postItem = async (req, res) => {
 
 // // PUT
 const putItem = async (req, res) => {
-  // #swagger.tags = ['Authors']
+  // #swagger.tags = ['Posts']
 
   // IMPORTANT
   // This comment is required for the swagger-autogen tool
@@ -97,32 +98,35 @@ const putItem = async (req, res) => {
             in: 'body',
             required: false,
             schema: {
-								author_name: "any",
-								author_email: "any",
-								author_image: "any"
+                title: "any",
+                subtitle: "any",
+                content: "any",
+                cover: "any",
+                author_name: "any",
+                tag_name: "any",
+                published_on: "any"
             }
   } */
 
   try {
     const collection = await mongodbInstance.getDb().db(DATABASE).collection(COLLECTION);
-
     const selectedId = req.params._id;
     // Create a filter for items with the selected id
     const filter = { _id: new ObjectId(selectedId) };
 
     // Specify the update to set a value for the plot field
-    const updatedAuthor = {};
+    const updatedPost = {};
 
     // Type alias UpdateFilter<TSchema>:
     // https://mongodb.github.io/node-mongodb-native/6.3/types/UpdateFilter.html
     const updateDoc = {
-      $set: updatedAuthor
+      $set: updatedPost
     };
 
     // Iterate over all body keys
     for (const key of Object.keys(req.body)) {
       if (req.body[key] !== null) {
-        updatedAuthor[key] = req.body[key];
+        updatedPost[key] = req.body[key];
       }
     }
 
@@ -144,7 +148,7 @@ const putItem = async (req, res) => {
 
 // DELETE
 const deleteItem = async (req, res) => {
-  // #swagger.tags = ['Authors']
+  // #swagger.tags = ['Posts']
 
   try {
     var selectedId = req.params._id;

@@ -11,6 +11,7 @@ let _db;
 
 const initDb = (callback) => {
   if (_db) {
+    // eslint-disable-next-line no-console
     console.log('Db is already initialized!');
     return callback(null, _db);
   }

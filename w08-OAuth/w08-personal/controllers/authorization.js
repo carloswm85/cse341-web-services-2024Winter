@@ -8,7 +8,7 @@ const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 
 // ENTRY PAGE
-const authorize = async (req, res, next) => {
+const authorize = async (req, res) => {
   // #swagger.tags = ['Authorization']
 
   const fullPath = path.join(__dirname, './', '../static/index.html');
@@ -16,7 +16,7 @@ const authorize = async (req, res, next) => {
 };
 
 // AUTHORIZE TO GITHUB
-const authorizeGithub = async (req, res, next) => {
+const authorizeGithub = async (req, res) => {
   // #swagger.tags = ['Authorization']
 
   res.redirect(`https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}`);
@@ -37,7 +37,8 @@ const callbackGithub = async ({ query: { code } }, res) => {
     .post('https://github.com/login/oauth/access_token', body, opts)
     .then((_res) => _res.data.access_token)
     .then((token) => {
-      console.log('My token:', token);
+      // eslint-disable-next-line no-console
+      console.log('My token: ', token);
 
       res.redirect(`/?token=${token}`);
     })
@@ -45,7 +46,7 @@ const callbackGithub = async ({ query: { code } }, res) => {
 };
 
 // LOGOUT DRAFT - Not working yet
-const logoutGithub = async (req, res, next) => {
+const logoutGithub = async (req, res) => {
   // #swagger.tags = ['Authorization']
 
   res.redirect(`https://github.com/`);

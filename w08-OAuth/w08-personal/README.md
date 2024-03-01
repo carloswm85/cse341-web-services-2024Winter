@@ -119,6 +119,10 @@
   - Error handling video [🔗](https://youtu.be/S0przpEKKGU)
   - `validate.js` video [🔗](https://youtu.be/S0przpEKKGU?si=3htSi66dToezA5HI&t=631)
 - [How to handle data validation in Node.js using validatorjs 🔗](https://blog.logrocket.com/handle-data-validation-node-js-validatorjs/)
+- `validation-express`
+  - [ValidationChain explanation 🔗](https://express-validator.github.io/docs/guides/validation-chain)
+  - [ValidationChain API 🔗](https://express-validator.github.io/docs/api/validation-chain/)
+  - [ARE YOU OVERUSING EXPRESS-VALIDATOR’S CUSTOM VALIDATOR? 🔗](https://addissoftware.com/are-you-overusing-express-validators-custom-validator/)
 
 ---
 

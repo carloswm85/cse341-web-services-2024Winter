@@ -1,19 +1,20 @@
+/* eslint-disable no-console */
 require('dotenv').config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 
 const connection = require('./db/connect');
 const routes = require('./routes');
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerFile = require('./swagger-output.json');
+// const swaggerUi = require('swagger-ui-express');
+// const swaggerFile = require('./swagger-output.json');
 
 const PORT = process.env.PORT || 8080;
-const USERNAME = process.env.USER_NAME;
-const PASS = process.env.USER_PASSWORD;
-const URL = process.env.CLUSTER_URL;
+// const USERNAME = process.env.USER_NAME;
+// const PASS = process.env.USER_PASSWORD;
+// const URL = process.env.CLUSTER_URL;
 const ROUTE = process.env.ROUTE;
 const SUBROUTE = process.env.SUBROUTE;
 const RENDER = process.env.RENDER_URI;
@@ -40,7 +41,7 @@ app
   })
   .use(`/`, routes);
 
-connection.initDb((err, mongodb) => {
+connection.initDb((err) => {
   if (err) {
     console.log(err);
   } else {

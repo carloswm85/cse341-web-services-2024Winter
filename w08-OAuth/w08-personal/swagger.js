@@ -1,54 +1,54 @@
-const swaggerAutogen = require("swagger-autogen")();
-const dotenv = require("dotenv");
+/* eslint-disable node/no-unpublished-require */
+const swaggerAutogen = require('swagger-autogen')();
+const dotenv = require('dotenv');
 dotenv.config();
 
 const isLocalHost = false;
 const PORT = process.env.PORT || 8080;
 
+// eslint-disable-next-line no-console
 console.log(`Is localhost: ${isLocalHost}`);
 
-const HOSTING = isLocalHost
-	? `localhost:${PORT}`
-	: "w08-personal-assignment-swagger.onrender.com";
-const SCHEMES = isLocalHost ? ["http", "https"] : ["https", "http"];
+const HOSTING = isLocalHost ? `localhost:${PORT}` : 'w08-personal-assignment-swagger.onrender.com';
+const SCHEMES = isLocalHost ? ['http', 'https'] : ['https', 'http'];
 
 const doc = {
-	info: {
-		title: "Content Management Systes API (CMS)",
-		description:
-			"The CMS API is designed to facilitate content management operations for a web-based application. It provides endpoints to manage articles, allowing users to retrieve a list of articles and create new articles. The API is defined using the OpenAPI Specification (OAS), making it easy to understand and integrate into various applications.",
-	},
-	contact: {
-		name: "Carlos Mercado",
-		email: "carlos.washington.mercado@gmail.com",
-	},
-	license: {
-		name: "Your License",
-		url: "https://en.wikipedia.org/wiki/MIT_License",
-	},
-	host: HOSTING,
-	schemes: SCHEMES,
-	securityDefinitions: {
-		api_key: {
-			type: "apiKey",
-			name: "api_key",
-			in: "header",
-		},
-	},
-	tags: [
-		{
-			name: "Articles",
-			description: "Endpoints related to managing articles",
-		},
-	],
-	externalDocs: {
-		description: "CSE341 - Lesson 8: OAuth",
-		url: "https://cse341.netlify.app/lesson8",
-	},
+  info: {
+    title: 'Content Management Systes API (CMS)',
+    description:
+      'The CMS API is designed to facilitate content management operations for a web-based application. It provides endpoints to manage articles, allowing users to retrieve a list of articles and create new articles. The API is defined using the OpenAPI Specification (OAS), making it easy to understand and integrate into various applications.'
+  },
+  contact: {
+    name: 'Carlos Mercado',
+    email: 'carlos.washington.mercado@gmail.com'
+  },
+  license: {
+    name: 'Your License',
+    url: 'https://en.wikipedia.org/wiki/MIT_License'
+  },
+  host: HOSTING,
+  schemes: SCHEMES,
+  securityDefinitions: {
+    api_key: {
+      type: 'apiKey',
+      name: 'api_key',
+      in: 'header'
+    }
+  },
+  tags: [
+    {
+      name: 'Articles',
+      description: 'Endpoints related to managing articles'
+    }
+  ],
+  externalDocs: {
+    description: 'CSE341 - Lesson 8: OAuth',
+    url: 'https://cse341.netlify.app/lesson8'
+  }
 };
 
-const outputFile = "./swagger-output.json";
-const routes = ["./routes/index.js"];
+const outputFile = './swagger-output.json';
+const routes = ['./routes/index.js'];
 
 /* NOTE: If you are using the express Router, you must pass in the 'routes' only the 
 root file where the route starts, such as index.js, app.js, routes.js, etc ... */
@@ -65,4 +65,5 @@ swaggerAutogen(outputFile, routes, doc);
 /**
  * Swagger 2.0 - https://www.npmjs.com/package/swagger-autogen/v/2.13.1#swagger-20
  * OAuth 2.0 configuration - https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/
+ * https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/
  */

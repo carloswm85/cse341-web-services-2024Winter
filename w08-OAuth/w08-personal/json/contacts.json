@@ -1,23 +1,23 @@
 [
-	{
-		"firstName": "Carlos",
-		"lastName": "Mercado",
-		"email": "carlos@gmail.com",
-		"favoriteColor": "blue",
-		"birthday": "05/25/85"
-	},
-	{
-		"firstName": "Rita",
-		"lastName": "Johnson",
-		"email": "rita@gmail.com",
-		"favoriteColor": "red",
-		"birthday": "12/30/90"
-	},
-	{
-		"firstName": "Paola",
-		"lastName": "Mariani",
-		"email": "pao@gmail.com",
-		"favoriteColor": "pink",
-		"birthday": "28/02/2000"
-	}
+  {
+    "firstName": "Carlos",
+    "lastName": "Mercado",
+    "email": "carlos@gmail.com",
+    "favoriteColor": "blue",
+    "birthday": "05/25/85"
+  },
+  {
+    "firstName": "Rita",
+    "lastName": "Johnson",
+    "email": "rita@gmail.com",
+    "favoriteColor": "red",
+    "birthday": "12/30/90"
+  },
+  {
+    "firstName": "Paola",
+    "lastName": "Mariani",
+    "email": "pao@gmail.com",
+    "favoriteColor": "pink",
+    "birthday": "28/02/2000"
+  }
 ]

@@ -1,98 +1,98 @@
 [
-	{
-		"tag_name": "Red"
-	},
-	{
-		"tag_name": "Yellow"
-	},
-	{
-		"tag_name": "Purple"
-	},
-	{
-		"tag_name": "Indigo"
-	},
-	{
-		"tag_name": "Mauv"
-	},
-	{
-		"tag_name": "Maroon"
-	},
-	{
-		"tag_name": "Goldenrod"
-	},
-	{
-		"tag_name": "Khaki"
-	},
-	{
-		"tag_name": "Puce"
-	},
-	{
-		"tag_name": "Turquoise"
-	},
-	{
-		"tag_name": "Teal"
-	},
-	{
-		"tag_name": "Fuscia"
-	},
-	{
-		"tag_name": "Aquamarine"
-	},
-	{
-		"tag_name": "Crimson"
-	},
-	{
-		"tag_name": "Green"
-	},
-	{
-		"tag_name": "Orange"
-	},
-	{
-		"tag_name": "Pink"
-	},
-	{
-		"tag_name": "Blue"
-	},
-	{
-		"tag_name": "Violet"
-	},
-	{
-		"tag_name": "Lavender"
-	},
-	{
-		"tag_name": "Cyan"
-	},
-	{
-		"tag_name": "Olive"
-	},
-	{
-		"tag_name": "Sapphire"
-	},
-	{
-		"tag_name": "Amber"
-	},
-	{
-		"tag_name": "Chocolate"
-	},
-	{
-		"tag_name": "Emerald"
-	},
-	{
-		"tag_name": "Magenta"
-	},
-	{
-		"tag_name": "Pearl"
-	},
-	{
-		"tag_name": "Ruby"
-	},
-	{
-		"tag_name": "Topaz"
-	},
-	{
-		"tag_name": "Sunflower"
-	},
-	{
-		"tag_name": "Charcoal"
-	}
+  {
+    "tag_name": "Red"
+  },
+  {
+    "tag_name": "Yellow"
+  },
+  {
+    "tag_name": "Purple"
+  },
+  {
+    "tag_name": "Indigo"
+  },
+  {
+    "tag_name": "Mauv"
+  },
+  {
+    "tag_name": "Maroon"
+  },
+  {
+    "tag_name": "Goldenrod"
+  },
+  {
+    "tag_name": "Khaki"
+  },
+  {
+    "tag_name": "Puce"
+  },
+  {
+    "tag_name": "Turquoise"
+  },
+  {
+    "tag_name": "Teal"
+  },
+  {
+    "tag_name": "Fuscia"
+  },
+  {
+    "tag_name": "Aquamarine"
+  },
+  {
+    "tag_name": "Crimson"
+  },
+  {
+    "tag_name": "Green"
+  },
+  {
+    "tag_name": "Orange"
+  },
+  {
+    "tag_name": "Pink"
+  },
+  {
+    "tag_name": "Blue"
+  },
+  {
+    "tag_name": "Violet"
+  },
+  {
+    "tag_name": "Lavender"
+  },
+  {
+    "tag_name": "Cyan"
+  },
+  {
+    "tag_name": "Olive"
+  },
+  {
+    "tag_name": "Sapphire"
+  },
+  {
+    "tag_name": "Amber"
+  },
+  {
+    "tag_name": "Chocolate"
+  },
+  {
+    "tag_name": "Emerald"
+  },
+  {
+    "tag_name": "Magenta"
+  },
+  {
+    "tag_name": "Pearl"
+  },
+  {
+    "tag_name": "Ruby"
+  },
+  {
+    "tag_name": "Topaz"
+  },
+  {
+    "tag_name": "Sunflower"
+  },
+  {
+    "tag_name": "Charcoal"
+  }
 ]

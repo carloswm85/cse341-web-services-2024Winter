@@ -13,10 +13,7 @@
       "description": "Endpoints related to managing articles"
     }
   ],
-  "schemes": [
-    "https",
-    "http"
-  ],
+  "schemes": ["https", "http"],
   "securityDefinitions": {
     "api_key": {
       "type": "apiKey",
@@ -27,13 +24,9 @@
   "paths": {
     "/authors/authors/": {
       "get": {
-        "tags": [
-          "Authors"
-        ],
+        "tags": ["Authors"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -44,9 +37,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Authors"
-        ],
+        "tags": ["Authors"],
         "description": "",
         "parameters": [
           {
@@ -86,13 +77,9 @@
     },
     "/authors/authors/{id}": {
       "get": {
-        "tags": [
-          "Authors"
-        ],
+        "tags": ["Authors"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -116,9 +103,7 @@
     },
     "/authors/authors/{_id}": {
       "put": {
-        "tags": [
-          "Authors"
-        ],
+        "tags": ["Authors"],
         "description": "",
         "parameters": [
           {
@@ -163,9 +148,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Authors"
-        ],
+        "tags": ["Authors"],
         "description": "",
         "parameters": [
           {
@@ -190,9 +173,7 @@
     },
     "/": {
       "get": {
-        "tags": [
-          "Authorization"
-        ],
+        "tags": ["Authorization"],
         "description": "",
         "responses": {
           "200": {
@@ -203,9 +184,7 @@
     },
     "/github-authorize/": {
       "get": {
-        "tags": [
-          "Authorization"
-        ],
+        "tags": ["Authorization"],
         "description": "",
         "responses": {
           "default": {
@@ -226,9 +205,7 @@
     },
     "/github-logout/": {
       "get": {
-        "tags": [
-          "Authorization"
-        ],
+        "tags": ["Authorization"],
         "description": "",
         "responses": {
           "default": {

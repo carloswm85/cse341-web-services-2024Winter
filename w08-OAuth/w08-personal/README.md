@@ -95,7 +95,7 @@
 
 - OAuth and Swagger:
   - [OAuth 2.0 🔗](https://swagger.io/docs/specification/authentication/oauth2/)
-    -  The OAuth 2.0 Authorization Framework - fc6749 [🔗](https://datatracker.ietf.org/doc/html/rfc6749)
+    - The OAuth 2.0 Authorization Framework - fc6749 [🔗](https://datatracker.ietf.org/doc/html/rfc6749)
   - [OAuth 2.0 configuration 🔗](https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/)
 - JSON Web Tokens (JWT):
   - [Introduction to JSON Web Tokens 🔗](https://jwt.io/introduction)

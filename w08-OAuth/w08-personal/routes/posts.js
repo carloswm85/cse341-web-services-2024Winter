@@ -7,14 +7,14 @@ const { postValidationRules, validate } = require('../middleware/validate');
 
 /** POSTS */
 // List
-posts.get('/posts/', postsController.getData);
+posts.get('/', postsController.getData);
 // Item
-posts.get('/posts/:id', postsController.getItem);
+posts.get('/:id', postsController.getItem);
 // Post
-posts.post('/posts/', postValidationRules(), validate, postsController.postItem);
+posts.post('/', postValidationRules(), validate, postsController.postItem);
 // Put
-posts.put('/posts/:_id', postValidationRules(), validate, postsController.putItem);
+posts.put('/:id', postValidationRules(), validate, postsController.putItem);
 // Delete
-posts.delete('/posts/:_id', postsController.deleteItem);
+posts.delete('/:id', postsController.deleteItem);
 
 module.exports = posts;

@@ -23,11 +23,11 @@ const postValidationRules = () => {
   return [
     body('title')
       .notEmpty()
-      .isLength({ min: 20, max: 30 })
+      .isLength({ min: 20, max: 50 })
       .withMessage('Length must be between 20 and 30 characters.'),
     body('subtitle')
       .notEmpty()
-      .isLength({ min: 30, max: 50 })
+      .isLength({ min: 30, max: 60 })
       .withMessage('Length must be between 30 and 50 characters.'),
     body('content')
       .notEmpty()

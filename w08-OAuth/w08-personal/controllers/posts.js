@@ -38,11 +38,10 @@ const getItem = async (req, res) => {
     if (response == undefined) {
       res.setHeader('Content-Type', 'application/json');
       res.status(404).json({ message: 'Item does not exist' });
-      res.json(response);
+    } else {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(response);
     }
-
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(response);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -110,7 +109,7 @@ const putItem = async (req, res) => {
 
   try {
     const collection = await mongodbInstance.getDb().db(DATABASE).collection(COLLECTION);
-    const selectedId = req.params._id;
+    const selectedId = req.params.id;
     // Create a filter for items with the selected id
     const filter = { _id: new ObjectId(selectedId) };
 
@@ -151,7 +150,7 @@ const deleteItem = async (req, res) => {
   // #swagger.tags = ['Posts']
 
   try {
-    var selectedId = req.params._id;
+    var selectedId = req.params.id;
     const collection = await mongodbInstance.getDb().db(DATABASE).collection(COLLECTION);
 
     // Delete the item by ID

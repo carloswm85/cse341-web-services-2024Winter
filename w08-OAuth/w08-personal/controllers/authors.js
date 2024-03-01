@@ -106,7 +106,7 @@ const putItem = async (req, res) => {
   try {
     const collection = await mongodbInstance.getDb().db(DATABASE).collection(COLLECTION);
 
-    const selectedId = req.params._id;
+    const selectedId = req.params.id;
     // Create a filter for items with the selected id
     const filter = { _id: new ObjectId(selectedId) };
 
@@ -147,7 +147,7 @@ const deleteItem = async (req, res) => {
   // #swagger.tags = ['Authors']
 
   try {
-    var selectedId = req.params._id;
+    var selectedId = req.params.id;
     const collection = await mongodbInstance.getDb().db(DATABASE).collection(COLLECTION);
 
     // Delete the item by ID

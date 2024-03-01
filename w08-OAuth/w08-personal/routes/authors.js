@@ -7,14 +7,14 @@ const { authorValidationRules, validate } = require('../middleware/validate');
 
 /** AUTHORS */
 // List
-authors.get('/authors/', authorsController.getData);
+authors.get('/', authorsController.getData);
 // Item
-authors.get('/authors/:id', authorsController.getItem);
+authors.get('/:id', authorsController.getItem);
 // Post
-authors.post('/authors/', authorValidationRules(), validate, authorsController.postItem);
+authors.post('/', authorValidationRules(), validate, authorsController.postItem);
 // Put
-authors.put('/authors/:_id', authorValidationRules(), validate, authorsController.putItem);
+authors.put('/:id', authorValidationRules(), validate, authorsController.putItem);
 // Delete
-authors.delete('/authors/:_id', authorsController.deleteItem);
+authors.delete('/:id', authorsController.deleteItem);
 
 module.exports = authors;

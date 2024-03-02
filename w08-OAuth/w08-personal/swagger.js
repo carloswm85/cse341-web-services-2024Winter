@@ -3,7 +3,7 @@ const swaggerAutogen = require('swagger-autogen')();
 const dotenv = require('dotenv');
 dotenv.config();
 
-const isLocalHost = true;
+const isLocalHost = false;
 const PORT = process.env.PORT || 8080;
 
 // eslint-disable-next-line no-console

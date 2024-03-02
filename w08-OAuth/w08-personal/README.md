@@ -180,7 +180,7 @@
 
 - NodeJS & Express - Google OAuth2 using PassportJS [🔗](https://youtu.be/Q0a0594tOrc) 📺 ~20m
 - Lesson 7 Class Activity Walkthrough: Auth0 + Google [🔗](https://youtu.be/52gurOGtaJM)
-- User implementation:
+- `User` model implementation:
   - GitHub Code Repo [🔗](https://github.com/byui-cse/cse341-code-student/tree/L06-personal-solution-example/models)
   - Video From Teacher [🔗](https://youtu.be/L7qj_g06NhY)
 
@@ -220,6 +220,9 @@
 ## Extra
 
 - Top 3 Things You Should Know About Webhooks! [🔗](https://youtu.be/x_jjhcDrISk)
+- Passportjs:
+  - Passport-GitHub2 [🔗](https://www.passportjs.org/packages/passport-github2/)
+  - Code example for `passport-github` [🔗](https://github.com/cfsghost/passport-github/blob/master/examples/login/app.js)
 
 ---
 
@@ -250,7 +253,8 @@
 # Resources
 
 - GitHub OAuth Apps - https://github.com/settings/developers
-- supertokens/supertokens-core - https://github.com/supertokens/supertokens-core
+- `supertokens/supertokens-core` - https://github.com/supertokens/supertokens-core
+- OpenAPI Guide - https://swagger.io/docs/specification/basic-structure/
 
 ---
 

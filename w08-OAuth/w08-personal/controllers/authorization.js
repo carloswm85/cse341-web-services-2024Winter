@@ -1,5 +1,6 @@
 // LINKS
-// https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/
+// OAuth 2.0 configuration - https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/
+// Passport-GitHub2 - https://www.passportjs.org/packages/passport-github2/
 
 const axios = require('axios');
 const path = require('path');

@@ -72,6 +72,7 @@
 - [What is Swagger? 🔗](https://swagger.io/tools/open-source/getting-started/)
 - [Create swagger.json from scratch (Design First) 🔗](https://support.smartbear.com/swaggerhub/docs/tutorials/getting-started.html)
 - [Create swagger.json npm package (Development First) - `swagger-autogen` 🔗](https://www.npmjs.com/package/swagger-autogen)
+  - Swagger Autogen Docs [🔗](https://swagger-autogen.github.io/docs/)
 - [swagger-ui-express 🔗](https://www.npmjs.com/package/swagger-ui-express)
 
 ## Other Options
@@ -172,6 +173,9 @@
 
 - NodeJS & Express - Google OAuth2 using PassportJS [🔗](https://youtu.be/Q0a0594tOrc) 📺 ~20m
 - Lesson 7 Class Activity Walkthrough: Auth0 + Google [🔗](https://youtu.be/52gurOGtaJM)
+- User implementation:
+  - GitHub Code Repo [🔗](https://github.com/byui-cse/cse341-code-student/tree/L06-personal-solution-example/models)
+  - Video From Teacher [🔗](https://youtu.be/L7qj_g06NhY)
 
 ---
 

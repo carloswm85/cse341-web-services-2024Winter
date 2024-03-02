@@ -24,7 +24,15 @@ const authorizeGithub = async (req, res) => {
 
 // CALLBACK FROM GITHUB
 const callbackGithub = async ({ query: { code } }, res) => {
-  // #swagger.tags = ['Authorization']
+  // https://swagger-autogen.github.io/docs/endpoints/forced-endpoint-creation
+  /*
+    #swagger.start
+    #swagger.path = '/github-oauth-callback/'
+    #swagger.method = 'get'
+    #swagger.description = 'Forced endpoint.'
+    #swagger.tags = ['Authorization']
+    #swagger.end
+  */
 
   const body = {
     client_id: GITHUB_CLIENT_ID,

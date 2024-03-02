@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "deploy": "npm run swagger && npm run production",
+    "deploy": "npm run production",
     "production": "node ./app.js",
     "swagger": "node ./swagger.js",
     "lint": "eslint .",

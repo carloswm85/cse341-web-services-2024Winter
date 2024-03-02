@@ -50,6 +50,19 @@ const getItem = async (req, res) => {
 // POST
 const postItem = async (req, res) => {
   // #swagger.tags = ['Posts']
+  /*  #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Add new post.',
+        schema: {
+          title: '',
+          subtitle: '',
+          content: '',
+          cover: 'cover.jpg',
+          author_name: 'firstName_lastName',
+          tag_name: '',
+          published_on: 'DD/MM/YYYY'
+        }
+    } */
 
   try {
     const { title, subtitle, content, cover, author_name, tag_name, published_on } = req.body;
@@ -90,22 +103,19 @@ const postItem = async (req, res) => {
 // // PUT
 const putItem = async (req, res) => {
   // #swagger.tags = ['Posts']
-
-  // IMPORTANT
-  // This comment is required for the swagger-autogen tool
   /*  #swagger.parameters['body'] = {
-            in: 'body',
-            required: false,
-            schema: {
-                title: "any",
-                subtitle: "any",
-                content: "any",
-                cover: "any",
-                author_name: "any",
-                tag_name: "any",
-                published_on: "any"
-            }
-  } */
+        in: 'body',
+        description: 'Update existing post data.',
+        schema: {
+          title: '',
+          subtitle: '',
+          content: '',
+          cover: 'cover.jpg',
+          author_name: 'firstName_lastName',
+          tag_name: '',
+          published_on: 'DD/MM/YYYY'
+        }
+    } */
 
   try {
     const collection = await mongodbInstance.getDb().db(DATABASE).collection(COLLECTION);

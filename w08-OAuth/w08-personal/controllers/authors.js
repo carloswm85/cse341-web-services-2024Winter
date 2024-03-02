@@ -54,7 +54,15 @@ const getItem = async (req, res) => {
 // POST
 const postItem = async (req, res) => {
   // #swagger.tags = ['Authors']
-
+  /*  #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Add new author.',
+        schema: {
+          author_name: 'firstName_lastName',
+          author_email: 'email@address.com',
+          author_image: 'uri/someimage.jpg'
+        }
+    } */
   try {
     const { author_name, author_email, author_image } = req.body;
 
@@ -94,14 +102,14 @@ const putItem = async (req, res) => {
   // IMPORTANT
   // This comment is required for the swagger-autogen tool
   /*  #swagger.parameters['body'] = {
-            in: 'body',
-            required: false,
-            schema: {
-								author_name: "any",
-								author_email: "any",
-								author_image: "any"
-            }
-  } */
+        in: 'body',
+        description: 'Update existing author data.',
+        schema: {
+          author_name: 'firstName_lastName',
+          author_email: 'email@address.com',
+          author_image: 'uri/someimage.jpg'
+        }
+    } */
 
   try {
     const collection = await mongodbInstance.getDb().db(DATABASE).collection(COLLECTION);

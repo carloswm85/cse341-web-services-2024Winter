@@ -2,10 +2,16 @@
   "swagger": "2.0",
   "info": {
     "title": "Content Management Systes API (CMS)",
-    "description": "The CMS API is designed to facilitate content management operations for a web-based application. It provides endpoints to manage articles, allowing users to retrieve a list of articles and create new articles. The API is defined using the OpenAPI Specification (OAS), making it easy to understand and integrate into various applications.",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "description": "The CMS API is designed to facilitate content management operations for a web-based application. It provides endpoints to manage articles, allowing users to retrieve a list of articles and create new articles. The API is defined using the OpenAPI Specification (OAS), making it easy to understand and integrate into various applications."
   },
-  "host": "w08-personal-assignment-swagger.onrender.com",
+  "host": "localhost:3000",
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Development server"
+    }
+  ],
   "basePath": "/",
   "tags": [
     {
@@ -14,8 +20,8 @@
     }
   ],
   "schemes": [
-    "https",
-    "http"
+    "http",
+    "https"
   ],
   "securityDefinitions": {
     "api_key": {
@@ -52,17 +58,21 @@
           {
             "name": "body",
             "in": "body",
+            "description": "Add new author.",
             "schema": {
               "type": "object",
               "properties": {
                 "author_name": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "firstName_lastName"
                 },
                 "author_email": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "email@address.com"
                 },
                 "author_image": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "uri/someimage.jpg"
                 }
               }
             }
@@ -128,21 +138,21 @@
           {
             "name": "body",
             "in": "body",
-            "required": false,
+            "description": "Update existing author data.",
             "schema": {
               "type": "object",
               "properties": {
                 "author_name": {
                   "type": "string",
-                  "example": "any"
+                  "example": "firstName_lastName"
                 },
                 "author_email": {
                   "type": "string",
-                  "example": "any"
+                  "example": "email@address.com"
                 },
                 "author_image": {
                   "type": "string",
-                  "example": "any"
+                  "example": "uri/someimage.jpg"
                 }
               }
             }
@@ -213,29 +223,37 @@
           {
             "name": "body",
             "in": "body",
+            "description": "Add new post.",
             "schema": {
               "type": "object",
               "properties": {
                 "title": {
-                  "example": "any"
+                  "type": "string",
+                  "example": ""
                 },
                 "subtitle": {
-                  "example": "any"
+                  "type": "string",
+                  "example": ""
                 },
                 "content": {
-                  "example": "any"
+                  "type": "string",
+                  "example": ""
                 },
                 "cover": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "cover.jpg"
                 },
                 "author_name": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "firstName_lastName"
                 },
                 "tag_name": {
-                  "example": "any"
+                  "type": "string",
+                  "example": ""
                 },
                 "published_on": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "DD/MM/YYYY"
                 }
               }
             }
@@ -301,37 +319,37 @@
           {
             "name": "body",
             "in": "body",
-            "required": false,
+            "description": "Update existing post data.",
             "schema": {
               "type": "object",
               "properties": {
                 "title": {
                   "type": "string",
-                  "example": "any"
+                  "example": ""
                 },
                 "subtitle": {
                   "type": "string",
-                  "example": "any"
+                  "example": ""
                 },
                 "content": {
                   "type": "string",
-                  "example": "any"
+                  "example": ""
                 },
                 "cover": {
                   "type": "string",
-                  "example": "any"
+                  "example": "cover.jpg"
                 },
                 "author_name": {
                   "type": "string",
-                  "example": "any"
+                  "example": "firstName_lastName"
                 },
                 "tag_name": {
                   "type": "string",
-                  "example": "any"
+                  "example": ""
                 },
                 "published_on": {
                   "type": "string",
-                  "example": "any"
+                  "example": "DD/MM/YYYY"
                 }
               }
             }

@@ -19,10 +19,7 @@
       "description": "Endpoints related to managing articles"
     }
   ],
-  "schemes": [
-    "http",
-    "https"
-  ],
+  "schemes": ["http", "https"],
   "securityDefinitions": {
     "api_key": {
       "type": "apiKey",
@@ -33,13 +30,9 @@
   "paths": {
     "/authors/": {
       "get": {
-        "tags": [
-          "Authors"
-        ],
+        "tags": ["Authors"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -50,9 +43,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Authors"
-        ],
+        "tags": ["Authors"],
         "description": "",
         "parameters": [
           {
@@ -96,13 +87,9 @@
     },
     "/authors/{id}": {
       "get": {
-        "tags": [
-          "Authors"
-        ],
+        "tags": ["Authors"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -124,9 +111,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Authors"
-        ],
+        "tags": ["Authors"],
         "description": "",
         "parameters": [
           {
@@ -171,9 +156,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Authors"
-        ],
+        "tags": ["Authors"],
         "description": "",
         "parameters": [
           {
@@ -198,13 +181,9 @@
     },
     "/posts/": {
       "get": {
-        "tags": [
-          "Posts"
-        ],
+        "tags": ["Posts"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -215,9 +194,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Posts"
-        ],
+        "tags": ["Posts"],
         "description": "",
         "parameters": [
           {
@@ -277,13 +254,9 @@
     },
     "/posts/{id}": {
       "get": {
-        "tags": [
-          "Posts"
-        ],
+        "tags": ["Posts"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -305,9 +278,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Posts"
-        ],
+        "tags": ["Posts"],
         "description": "",
         "parameters": [
           {
@@ -368,9 +339,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Posts"
-        ],
+        "tags": ["Posts"],
         "description": "",
         "parameters": [
           {
@@ -395,9 +364,7 @@
     },
     "/": {
       "get": {
-        "tags": [
-          "Authorization"
-        ],
+        "tags": ["Authorization"],
         "description": "",
         "responses": {
           "200": {
@@ -408,9 +375,7 @@
     },
     "/github-authorize/": {
       "get": {
-        "tags": [
-          "Authorization"
-        ],
+        "tags": ["Authorization"],
         "description": "",
         "responses": {
           "default": {
@@ -431,9 +396,7 @@
     },
     "/github-logout/": {
       "get": {
-        "tags": [
-          "Authorization"
-        ],
+        "tags": ["Authorization"],
         "description": "",
         "responses": {
           "default": {

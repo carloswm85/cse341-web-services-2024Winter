@@ -9,16 +9,12 @@ const isLocalHost = env != 'production';
 const axios = require('axios');
 const path = require('path');
 
-const githubClientId =
-  // isLocalHost
-  // ?
-  process.env.GITHUB_CLIENT_ID_LOCALHOST;
-// : process.env.GITHUB_CLIENT_ID;
-const githubClientSecret =
-  // isLocalHost
-  // ?
-  process.env.GITHUB_CLIENT_SECRET_LOCALHOST;
-// : process.env.GITHUB_CLIENT_SECRET;
+const githubClientId = isLocalHost
+  ? process.env.GITHUB_CLIENT_ID_LOCALHOST
+  : process.env.GITHUB_CLIENT_ID;
+const githubClientSecret = isLocalHost
+  ? process.env.GITHUB_CLIENT_SECRET_LOCALHOST
+  : process.env.GITHUB_CLIENT_SECRET;
 
 // ENTRY PAGE
 const authorize = async (req, res) => {

@@ -30,21 +30,15 @@ const port = process.env.PORT || 8080;
 // const SUBROUTE = process.env.SUBROUTE;
 const render = process.env.RENDER_URI;
 
-const githubClientId =
-  // isLocalHost
-  // ?
-  process.env.GITHUB_CLIENT_ID_LOCALHOST;
-// : process.env.GITHUB_CLIENT_ID;
-const githubClientSecret =
-  // isLocalHost
-  // ?
-  process.env.GITHUB_CLIENT_SECRET_LOCALHOST;
-// : process.env.GITHUB_CLIENT_SECRET;
-const githubCallbackUrl =
-  // isLocalHost
-  // ?
-  process.env.GITHUB_CALLBACK_URL_LOCALHOST;
-// : process.env.GITHUB_CALLBACK_URL;
+const githubClientId = isLocalHost
+  ? process.env.GITHUB_CLIENT_ID_LOCALHOST
+  : process.env.GITHUB_CLIENT_ID;
+const githubClientSecret = isLocalHost
+  ? process.env.GITHUB_CLIENT_SECRET_LOCALHOST
+  : process.env.GITHUB_CLIENT_SECRET;
+const githubCallbackUrl = isLocalHost
+  ? process.env.GITHUB_CALLBACK_URL_LOCALHOST
+  : process.env.GITHUB_CALLBACK_URL;
 
 //** METHODS ---------------------------------------------------------------- */
 

@@ -1,3 +1,7 @@
+// If NODE_ENV is undefined, assume production
+const env = process.env.NODE_ENV || 'production';
+const isLocalHost = env != 'production';
+//
 // LINKS
 // OAuth 2.0 configuration - https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/
 // Passport-GitHub2 - https://www.passportjs.org/packages/passport-github2/
@@ -5,8 +9,16 @@
 const axios = require('axios');
 const path = require('path');
 
-const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
-const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
+const githubClientId =
+  // isLocalHost
+  // ?
+  process.env.GITHUB_CLIENT_ID_LOCALHOST;
+// : process.env.GITHUB_CLIENT_ID;
+const githubClientSecret =
+  // isLocalHost
+  // ?
+  process.env.GITHUB_CLIENT_SECRET_LOCALHOST;
+// : process.env.GITHUB_CLIENT_SECRET;
 
 // ENTRY PAGE
 const authorize = async (req, res) => {
@@ -20,7 +32,7 @@ const authorize = async (req, res) => {
 const authorizeGithub = async (req, res) => {
   // #swagger.tags = ['Authorization']
 
-  res.redirect(`https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}`);
+  res.redirect(`https://github.com/login/oauth/authorize?client_id=${githubClientId}`);
 };
 
 // CALLBACK FROM GITHUB
@@ -36,8 +48,8 @@ const callbackGithub = async ({ query: { code } }, res) => {
   */
 
   const body = {
-    client_id: GITHUB_CLIENT_ID,
-    client_secret: GITHUB_CLIENT_SECRET,
+    client_id: githubClientId,
+    client_secret: githubClientSecret,
     code
   };
 

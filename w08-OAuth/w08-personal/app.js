@@ -1,3 +1,6 @@
+// If NODE_ENV is undefined, assume production
+const env = process.env.NODE_ENV || 'production';
+const isLocalHost = env != 'production';
 //** REQUIRES --------------------------------------------------------------- */
 
 /* eslint-disable no-console */
@@ -19,16 +22,29 @@ var GitHubStrategy = require('passport-github2').Strategy;
 
 //** CONSTANTS -------------------------------------------------------------- */
 
-const PORT = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 // const USERNAME = process.env.USER_NAME;
 // const PASS = process.env.USER_PASSWORD;
 // const URL = process.env.CLUSTER_URL;
-const ROUTE = process.env.ROUTE;
-const SUBROUTE = process.env.SUBROUTE;
-const RENDER = process.env.RENDER_URI;
+// const ROUTE = process.env.ROUTE;
+// const SUBROUTE = process.env.SUBROUTE;
+const render = process.env.RENDER_URI;
 
-const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
-const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
+const githubClientId =
+  // isLocalHost
+  // ?
+  process.env.GITHUB_CLIENT_ID_LOCALHOST;
+// : process.env.GITHUB_CLIENT_ID;
+const githubClientSecret =
+  // isLocalHost
+  // ?
+  process.env.GITHUB_CLIENT_SECRET_LOCALHOST;
+// : process.env.GITHUB_CLIENT_SECRET;
+const githubCallbackUrl =
+  // isLocalHost
+  // ?
+  process.env.GITHUB_CALLBACK_URL_LOCALHOST;
+// : process.env.GITHUB_CALLBACK_URL;
 
 //** METHODS ---------------------------------------------------------------- */
 
@@ -56,9 +72,9 @@ passport.deserializeUser(function (obj, done) {
 passport.use(
   new GitHubStrategy(
     {
-      clientID: GITHUB_CLIENT_ID,
-      clientSecret: GITHUB_CLIENT_SECRET,
-      callbackURL: 'http://localhost:3000/github-oauth-callback'
+      clientID: githubClientId,
+      clientSecret: githubClientSecret,
+      callbackURL: githubCallbackUrl
     },
     function (accessToken, refreshToken, profile, done) {
       // asynchronous verification, for effect...
@@ -99,10 +115,10 @@ connection.initDb((err) => {
   if (err) {
     console.log(err);
   } else {
-    app.listen(PORT);
-    console.log(`Connected to DB and listening on ${PORT}`);
-    console.log(`http://localhost:${PORT}/${ROUTE}/${SUBROUTE}/list`);
-    console.log(`API documentation - local: http://localhost:${PORT}/api-docs`);
-    console.log(`API documentation - Render: ${RENDER}/api-docs`);
+    app.listen(port);
+    console.log(`Connected to DB and listening on ${port}`);
+    console.log(`Is localhost: ${isLocalHost}`);
+    console.log(`API documentation - localhost: http://localhost:${port}/api-docs`);
+    console.log(`API documentation - Production server: ${render}/api-docs`);
   }
 });

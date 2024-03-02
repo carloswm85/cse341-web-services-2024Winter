@@ -1,9 +1,9 @@
+const isLocalHost = true;
 /* eslint-disable node/no-unpublished-require */
 const swaggerAutogen = require('swagger-autogen')();
 const dotenv = require('dotenv');
 dotenv.config();
 
-const isLocalHost = false;
 const PORT = process.env.PORT || 8080;
 
 // eslint-disable-next-line no-console

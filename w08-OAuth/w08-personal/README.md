@@ -1,3 +1,4 @@
+- [For This Project](#for-this-project)
 - [w01 -](#w01--)
 - [w02 -](#w02--)
 - [w03 - HTTP Requests \& Dev Tools (and, Linters and Formatters)](#w03---http-requests--dev-tools-and-linters-and-formatters)
@@ -34,6 +35,12 @@
 - [Resources](#resources)
 - [PROJECT IDEA: CMS (Content Management System)](#project-idea-cms-content-management-system)
   - [Readings](#readings)
+
+---
+
+# For This Project
+
+- [User implementation 🔗📺](https://youtu.be/L7qj_g06NhY)
 
 ---
 

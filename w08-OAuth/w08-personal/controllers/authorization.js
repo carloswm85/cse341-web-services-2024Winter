@@ -1,5 +1,4 @@
-require('dotenv').config();
-const isLocalHost = process.env.IS_LOCAL_HOST;
+const isLocalHost = false;
 //
 // LINKS
 // OAuth 2.0 configuration - https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/

@@ -421,6 +421,9 @@
     },
     "/github-oauth-callback/": {
       "get": {
+        "tags": [
+          "Authorization"
+        ],
         "description": "",
         "responses": {
           "default": {

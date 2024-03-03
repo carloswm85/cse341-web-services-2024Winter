@@ -12,14 +12,14 @@ const routes = require('./routes');
 var passport = require('passport');
 var session = require('express-session');
 var GitHubStrategy = require('passport-github2').Strategy;
+require('dotenv').config();
 
 // const swaggerUi = require('swagger-ui-express');
 // const swaggerFile = require('./swagger-output.json');
 
 //** CONSTANTS -------------------------------------------------------------- */
 
-require('dotenv').config();
-const isLocalHost = process.env.IS_LOCAL_HOST;
+const isLocalHost = false;
 const port = process.env.PORT || 8080;
 // const USERNAME = process.env.USER_NAME;
 // const PASS = process.env.USER_PASSWORD;
@@ -37,6 +37,11 @@ const githubClientSecret = isLocalHost
 const githubCallbackUrl = isLocalHost
   ? process.env.GITHUB_CALLBACK_URL_LOCALHOST
   : process.env.GITHUB_CALLBACK_URL;
+
+console.log(`Is localhost (app.js): ${isLocalHost}`);
+console.log(`githubClientId - ${githubClientId}`);
+console.log(`githubClientSecret - ${githubClientSecret}`);
+console.log(`githubCallbackUrl - ${githubCallbackUrl}`);
 
 //** METHODS ---------------------------------------------------------------- */
 
@@ -109,7 +114,6 @@ connection.initDb((err) => {
   } else {
     app.listen(port);
     console.log(`Connected to DB and listening on ${port}`);
-    console.log(`Is localhost (app.js): ${isLocalHost}`);
     console.log(`API documentation - localhost: http://localhost:${port}/api-docs`);
     console.log(`API documentation - Production server: ${render}/api-docs`);
   }

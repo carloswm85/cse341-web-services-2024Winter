@@ -1,4 +1,4 @@
-const isLocalHost = true;
+const isLocalHost = false;
 /* eslint-disable node/no-unpublished-require */
 const swaggerAutogen = require('swagger-autogen')();
 const dotenv = require('dotenv');
@@ -7,7 +7,7 @@ dotenv.config();
 const PORT = process.env.PORT || 8080;
 
 // eslint-disable-next-line no-console
-console.log(`Is localhost: ${isLocalHost}`);
+console.log(`Is localhost (swagger.js): ${isLocalHost}`);
 
 const HOSTING = isLocalHost ? `localhost:${PORT}` : 'w08-personal-assignment-swagger.onrender.com';
 const SCHEMES = isLocalHost ? ['http', 'https'] : ['https', 'http'];

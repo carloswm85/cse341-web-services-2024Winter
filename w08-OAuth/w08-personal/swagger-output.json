@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "description": "The CMS API is designed to facilitate content management operations for a web-based application. It provides endpoints to manage articles, allowing users to retrieve a list of articles and create new articles. The API is defined using the OpenAPI Specification (OAS), making it easy to understand and integrate into various applications."
   },
-  "host": "localhost:3000",
+  "host": "w08-personal-assignment-swagger.onrender.com",
   "servers": [
     {
       "url": "http://localhost:3000",
@@ -19,7 +19,10 @@
       "description": "Endpoints related to managing articles"
     }
   ],
-  "schemes": ["http", "https"],
+  "schemes": [
+    "https",
+    "http"
+  ],
   "securityDefinitions": {
     "api_key": {
       "type": "apiKey",
@@ -30,9 +33,13 @@
   "paths": {
     "/authors/": {
       "get": {
-        "tags": ["Authors"],
+        "tags": [
+          "Authors"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -43,7 +50,9 @@
         }
       },
       "post": {
-        "tags": ["Authors"],
+        "tags": [
+          "Authors"
+        ],
         "description": "",
         "parameters": [
           {
@@ -87,9 +96,13 @@
     },
     "/authors/{id}": {
       "get": {
-        "tags": ["Authors"],
+        "tags": [
+          "Authors"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -111,7 +124,9 @@
         }
       },
       "put": {
-        "tags": ["Authors"],
+        "tags": [
+          "Authors"
+        ],
         "description": "",
         "parameters": [
           {
@@ -156,7 +171,9 @@
         }
       },
       "delete": {
-        "tags": ["Authors"],
+        "tags": [
+          "Authors"
+        ],
         "description": "",
         "parameters": [
           {
@@ -181,9 +198,13 @@
     },
     "/posts/": {
       "get": {
-        "tags": ["Posts"],
+        "tags": [
+          "Posts"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -194,7 +215,9 @@
         }
       },
       "post": {
-        "tags": ["Posts"],
+        "tags": [
+          "Posts"
+        ],
         "description": "",
         "parameters": [
           {
@@ -254,9 +277,13 @@
     },
     "/posts/{id}": {
       "get": {
-        "tags": ["Posts"],
+        "tags": [
+          "Posts"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -278,7 +305,9 @@
         }
       },
       "put": {
-        "tags": ["Posts"],
+        "tags": [
+          "Posts"
+        ],
         "description": "",
         "parameters": [
           {
@@ -339,7 +368,9 @@
         }
       },
       "delete": {
-        "tags": ["Posts"],
+        "tags": [
+          "Posts"
+        ],
         "description": "",
         "parameters": [
           {
@@ -364,7 +395,9 @@
     },
     "/": {
       "get": {
-        "tags": ["Authorization"],
+        "tags": [
+          "Authorization"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -375,7 +408,9 @@
     },
     "/github-authorize/": {
       "get": {
-        "tags": ["Authorization"],
+        "tags": [
+          "Authorization"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -387,6 +422,9 @@
     "/github-oauth-callback/": {
       "get": {
         "description": "",
+        "tags": [
+          "Authorization"
+        ],
         "responses": {
           "default": {
             "description": ""
@@ -396,7 +434,9 @@
     },
     "/github-logout/": {
       "get": {
-        "tags": ["Authorization"],
+        "tags": [
+          "Authorization"
+        ],
         "description": "",
         "responses": {
           "default": {

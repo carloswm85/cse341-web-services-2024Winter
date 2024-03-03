@@ -111,7 +111,7 @@ connection.initDb((err) => {
   } else {
     app.listen(port);
     console.log(`Connected to DB and listening on ${port}`);
-    console.log(`Is localhost: ${isLocalHost}`);
+    console.log(`Is localhost (app.js): ${isLocalHost}`);
     console.log(`API documentation - localhost: http://localhost:${port}/api-docs`);
     console.log(`API documentation - Production server: ${render}/api-docs`);
   }

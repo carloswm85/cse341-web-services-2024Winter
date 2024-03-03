@@ -1,9 +1,7 @@
 require('dotenv').config();
-const isLocalHost = process.env.IS_LOCAL_HOST;
+const isLocalHost = false;
 /* eslint-disable node/no-unpublished-require */
 const swaggerAutogen = require('swagger-autogen')();
-const dotenv = require('dotenv');
-dotenv.config();
 
 const PORT = process.env.PORT || 8080;
 

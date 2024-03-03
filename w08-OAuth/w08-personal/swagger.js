@@ -1,4 +1,5 @@
-const isLocalHost = false;
+require('dotenv').config();
+const isLocalHost = process.env.IS_LOCAL_HOST;
 /* eslint-disable node/no-unpublished-require */
 const swaggerAutogen = require('swagger-autogen')();
 const dotenv = require('dotenv');

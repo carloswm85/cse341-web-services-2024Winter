@@ -1,10 +1,6 @@
-// If NODE_ENV is undefined, assume production
-const env = process.env.NODE_ENV || 'production';
-const isLocalHost = env != 'production';
 //** REQUIRES --------------------------------------------------------------- */
 
 /* eslint-disable no-console */
-require('dotenv').config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -22,6 +18,8 @@ var GitHubStrategy = require('passport-github2').Strategy;
 
 //** CONSTANTS -------------------------------------------------------------- */
 
+require('dotenv').config();
+const isLocalHost = process.env.IS_LOCAL_HOST;
 const port = process.env.PORT || 8080;
 // const USERNAME = process.env.USER_NAME;
 // const PASS = process.env.USER_PASSWORD;

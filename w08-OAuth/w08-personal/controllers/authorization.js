@@ -1,6 +1,5 @@
-// If NODE_ENV is undefined, assume production
-const env = process.env.NODE_ENV || 'production';
-const isLocalHost = env != 'production';
+require('dotenv').config();
+const isLocalHost = process.env.IS_LOCAL_HOST;
 //
 // LINKS
 // OAuth 2.0 configuration - https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/

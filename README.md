@@ -1,4 +1,5 @@
 - [CSE 341 - Web Services - Winter 2024](#cse-341---web-services---winter-2024)
+  - [Best Links](#best-links)
 - [w01 - Introducing our tech stack](#w01---introducing-our-tech-stack)
   - [Course Setup](#course-setup)
   - [Getting started with our first APIs](#getting-started-with-our-first-apis)
@@ -71,6 +72,17 @@
 ---
 
 # CSE 341 - Web Services - Winter 2024
+
+## Best Links
+
+- [User implementation 🔗📺](https://youtu.be/L7qj_g06NhY)
+- [Maphnew/node_andrew/README.md 🔗⭐](https://github.com/Maphnew/node_andrew/blob/master/README.md)
+- Node Architecture and API Organization:
+  - [Node.js project architecture best practices 🔗](https://blog.logrocket.com/the-perfect-architecture-flow-for-your-next-node-js-project/)
+  - [Bulletproof node.js project architecture 🔗](https://softwareontheroad.com/ideal-nodejs-project-structure/)
+  - [Organizing your Express.js project structure for better productivity 🔗](https://blog.logrocket.com/organizing-express-js-project-structure-better-productivity/)
+
+---
 
 # w01 - Introducing our tech stack
 

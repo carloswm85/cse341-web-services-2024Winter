@@ -75,8 +75,8 @@
 
 ## Best Links
 
-- [User implementation 🔗📺](https://youtu.be/L7qj_g06NhY)
-- [Maphnew/node_andrew/README.md 🔗⭐](https://github.com/Maphnew/node_andrew/blob/master/README.md)
+- [User implementation 📺](https://youtu.be/L7qj_g06NhY)
+- [Maphnew/node_andrew/README.md ⭐](https://github.com/Maphnew/node_andrew/blob/master/README.md)
 - Node Architecture and API Organization:
   - [Node.js project architecture best practices 🔗](https://blog.logrocket.com/the-perfect-architecture-flow-for-your-next-node-js-project/)
   - [Bulletproof node.js project architecture 🔗](https://softwareontheroad.com/ideal-nodejs-project-structure/)

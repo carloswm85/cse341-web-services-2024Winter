@@ -1,0 +1,7 @@
+{"level":"info","message":">> RUNNING TESTS <<"}
+{"level":"info","message":"Listening in port: 3000"}
+{"level":"info","message":"GET ONE - One user requested\n[object Object]"}
+{"level":"info","message":"POST - New user id: 661091333688ac38def7ed4c"}
+{"level":"info","message":"PUT - Modify posted user\n[object Object]"}
+{"level":"info","message":"DELETE - delete put user\nItem was deleted successfully."}
+{"level":"info","message":"Db connection closed"}

@@ -1,18 +1,37 @@
 - [CSE 341 - Web Services - Winter 2024](#cse-341---web-services---winter-2024)
-- [Extra Material](#extra-material)
 - [w01 - Introducing our tech stack](#w01---introducing-our-tech-stack)
   - [Course Setup](#course-setup)
   - [Getting started with our first APIs](#getting-started-with-our-first-apis)
   - [API Deployment at Render](#api-deployment-at-render)
-- [w02 -](#w02--)
+- [w02 - REST Clients, GET Requests, Node Architecture](#w02---rest-clients-get-requests-node-architecture)
+  - [Connect API to MongoDB Securely](#connect-api-to-mongodb-securely)
+  - [REST Clients](#rest-clients)
+  - [GET Requests](#get-requests)
+  - [Query Parameters](#query-parameters)
+  - [Debugging Node](#debugging-node)
+  - [Headers](#headers)
+  - [Node Architecture and API Organization](#node-architecture-and-api-organization)
 - [w03 - HTTP Requests \& Dev Tools (and, Linters and Formatters)](#w03---http-requests--dev-tools-and-linters-and-formatters)
-  - [Linters and Formatters](#linters-and-formatters)
+  - [URI Hierarchies](#uri-hierarchies)
+  - [POST](#post)
+  - [PUT](#put)
+  - [DELETE](#delete)
+  - [MongoDB CRUD](#mongodb-crud)
+  - [Linters](#linters)
+  - [Code Formatters](#code-formatters)
+  - [Project Configuration and Management](#project-configuration-and-management)
 - [w04 - API Documentation](#w04---api-documentation)
   - [API Documentation](#api-documentation)
   - [Swagger](#swagger)
   - [Other Options](#other-options)
   - [Extra](#extra)
 - [w05 - REST \& JSON Alternatives](#w05---rest--json-alternatives)
+  - [JSON vs XML](#json-vs-xml)
+  - [REST Overview](#rest-overview)
+  - [RPC](#rpc)
+  - [XML+RPC](#xmlrpc)
+  - [SOAP](#soap)
+  - [GraphQL](#graphql)
 - [w06 - Validation \& Error Handling](#w06---validation--error-handling)
   - [Validation](#validation)
   - [Error Handling](#error-handling)
@@ -27,18 +46,24 @@
     - [Node.js API + OAuth + MongoDb](#nodejs-api--oauth--mongodb)
   - [Extra](#extra-2)
 - [w08 - OAuth](#w08---oauth)
-  - [Explanation](#explanation-1)
-    - [OAuth and Swagger](#oauth-and-swagger)
-    - [JSON Web Tokens (JWT)](#json-web-tokens-jwt)
-    - [JWT meets OAuth](#jwt-meets-oauth)
+  - [OAuth and Swagger](#oauth-and-swagger)
+  - [JSON Web Tokens (JWT)](#json-web-tokens-jwt)
+  - [JWT meets OAuth](#jwt-meets-oauth)
   - [Extra](#extra-3)
 - [w09 - API Gateways and Managers](#w09---api-gateways-and-managers)
   - [What Is An API Gateway?](#what-is-an-api-gateway)
   - [Popular API Gateways and Managers](#popular-api-gateways-and-managers)
-- [w10 -](#w10--)
-- [w11 -](#w11--)
-- [w12 -](#w12--)
-- [w13 -](#w13--)
+- [w10 - API Gateways and Managers](#w10---api-gateways-and-managers)
+  - [Setting up an Azure Gateway](#setting-up-an-azure-gateway)
+- [w11 - Testing](#w11---testing)
+  - [Why Testing?](#why-testing)
+  - [JavaScript Testing Frameworks](#javascript-testing-frameworks)
+  - [Writing Unit Tests with Jest](#writing-unit-tests-with-jest)
+- [w12 - Testing](#w12---testing)
+- [w13 - Wrap Up](#w13---wrap-up)
+  - [Resume Tips](#resume-tips)
+  - [Interview Prep](#interview-prep)
+  - [Interview Questions](#interview-questions)
 - [Resources](#resources)
 - [PROJECT IDEA: CMS (Content Management System)](#project-idea-cms-content-management-system)
   - [Readings](#readings)
@@ -46,12 +71,6 @@
 ---
 
 # CSE 341 - Web Services - Winter 2024
-
-# Extra Material
-
-- [User implementation 🔗📺](https://youtu.be/L7qj_g06NhY)
-
----
 
 # w01 - Introducing our tech stack
 
@@ -101,28 +120,145 @@
 
 ---
 
-# w02 -
+# w02 - REST Clients, GET Requests, Node Architecture
 
 - [Lesson 02 🔗](https://cse341.netlify.app/lesson2)
+  - Repository [🔗](https://github.com/byui-cse/cse341-code-student/branches/all?query=L02)
+  - Videos:
+    - cse341 L02 Introduction [🔗](https://youtu.be/Yf6podqP-zE)
+    - Publish Node API to Heroku with GET requests (cse341 Lesson 2 Personal Assignment) [🔗](https://youtu.be/MhObHmqk58U)
+
+## Connect API to MongoDB Securely
+
+- [Connect to a MongoDB Database Using Node.js 🔗](https://www.mongodb.com/blog/post/quick-start-nodejs-mongodb-how-to-get-connected-to-your-database)
+- [(OPTIONAL) YouTube: MongoDB (Atlas) connection using Node 🔗](https://youtu.be/Qn0SOL8vK8w)
+- [Moving nodejs MongoDB connection code to another file 🔗](https://stackoverflow.com/questions/58354629/moving-nodejs-mongodb-connection-code-to-another-file)
+
+## REST Clients
+
+A REST client is a tool that allows us to invoke a REST service API. In lesson 1, we created our first GET request API and we actually ended up seeing that data directly in the browser. To an extent, our browser functioned as our REST client last week. However, there are many things that our browsers cannot do without some client-side code. For example, if I needed to make a GET request with any type of dynamic data, headers, authentication keys, or other similar pieces of data, I would not be able to unless I had a frontend project in place. REST clients on the other hand, will allow us to make all sorts of HTTP requests with all sorts of data in an environment that is intuitive and convenient.
+
+The number of REST clients in production today is very great, with these programs coming and going like much of the software we see on a regular basis. Here are several REST clients being used widely in industry today:
+
+- [HTTPie 🔗](https://httpie.io/)
+- [Postman 🔗](https://www.postman.com/)
+- [Swagger 🔗](https://swagger.io/tools/swagger-ui/)
+- [Thunder Client (VS Code Extension) 🔗](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)
+- [Rest Client (VS Code Extension) 🔗](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+- [You can read about many others in this Google search. 🔗](https://www.google.com/search?q=most+popular+rest+clients+in+industry+today&oq=most+popular+rest+clients+in+industry+today)
+
+## GET Requests
+
+There are a lot of different ways to learn about GET requests, and you're likely already familiar with what they are from previous classes you've taken. For example, in WDD 230, you made several fetch requests (JavaScript client way of sending http requests to a server), to get temple data, or weather data...those were GET requests. Here are some resources below to learn more about these, and also to learn how to make them in Node.
+
+- [W3schools HTTP Methods 🔗](https://www.w3schools.com/tags/ref_httpmethods.asp)
+- [GET - What is the GET Method 🔗](https://rapidapi.com/blog/api-glossary/get/)
+- [Build Node.js RESTful APIs in 10 Minutes 🔗](https://www.codementor.io/@olatundegaruba/nodejs-restful-apis-in-10-minutes-q0sgsfhbd)
+- [(OPTIONAL) YouTube: Node.js + Express - Tutorial - GET and POST Requests 🔗](https://www.youtube.com/watch?v=Sb8xyCa2p7A)
+- [(OPTIONAL) YouTube: How to build a REST API with Node js & Express 🔗](https://www.youtube.com/watch?v=pKd0Rpw7O48)
+
+## Query Parameters
+
+- [What are query parameters? 🔗](https://rapidapi.com/blog/api-glossary/parameters/query/)
+- [How to access query string parameters 🔗](https://nodejs.org/en/knowledge/HTTP/clients/how-to-access-query-string-parameters/)
+- [Stack Overflow: How to get GET (query string) variables in Express.js on Node.js? 🔗](https://stackoverflow.com/questions/6912584/how-to-get-get-query-string-variables-in-express-js-on-node-js?rq=1)
+
+## Debugging Node
+
+- [Node Debugging Guide 🔗](https://nodejs.org/en/docs/guides/debugging-getting-started/)
+- [The Absolute Easiest Way to Debug Node.js — with VS Code 🔗](https://itnext.io/the-absolute-easiest-way-to-debug-node-js-with-vscode-2e02ef5b1bad)
+- [(Optional) YouTube: Debug NodeJS Project in VS Code 🔗](https://www.youtube.com/watch?v=HtiigX7wHC4&ab_channel=Nathan)
+
+## Headers
+
+- [HTTP Headers 🔗](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+- [Stackoverflow: get headers from a request using Node 🔗](https://stackoverflow.com/questions/13147693/how-to-extract-request-http-headers-from-a-request-using-nodejs-connect)
+
+## Node Architecture and API Organization
+
+- [Node.js project architecture best practices 🔗](https://blog.logrocket.com/the-perfect-architecture-flow-for-your-next-node-js-project/)
+- [Bulletproof node.js project architecture 🔗](https://softwareontheroad.com/ideal-nodejs-project-structure/)
+- [Organizing your Express.js project structure for better productivity 🔗](https://blog.logrocket.com/organizing-express-js-project-structure-better-productivity/)
 
 ---
 
 # w03 - HTTP Requests & Dev Tools (and, Linters and Formatters)
 
 - [Lesson 03 🔗](https://cse341.netlify.app/lesson3)
+  - [cse341 L03 Introduction 📺](https://youtu.be/iGuKWTT1-qs)
+  - [Publish NodeJS MongoDB CRUD API to Heroku (cse341 L03 personal assignment) 📺](https://youtu.be/0iVptecZ0-E)
 
-## Linters and Formatters
+## URI Hierarchies
+
+- [JavaScript URIs 🔗](https://medialize.github.io/URI.js/)
+- [Node.js - RESTful API 🔗](https://www.tutorialspoint.com/nodejs/nodejs_restful_api.htm)
+
+## POST
+
+As you learn about these different HTTP methods, know that there are always other ways to do things. For example, MongoDB uses queries and functions to insert, update, delete and retrieve data. Technically, I could use a POST to get data, modify it, or even delete it. However, these HTTP methods are here to add clarity and consistency to applications, and will work with other databases that don't rely on functions as much as MongoDB does.
+
+- [Building a REST API with Node and Express 🔗](https://stackabuse.com/building-a-rest-api-with-node-and-express/)
+- [MongoDB http.post() 🔗](https://docs.mongodb.com/realm/services/http-actions/http.post/)
+- [Building a RESTful API Using Node.JS and MongoDB 🔗](https://nordicapis.com/building-a-restful-api-using-node-js-and-mongodb/)
+- [(OPTIONAL) YouTube: Build A Restful Api With Node.js Express & MongoDB | 🔗](https://www.youtube.com/watch?v=vjf774RKrLc)
+
+## PUT
+
+- [Node JS Make HTTP Put Request Example 🔗](https://www.itsolutionstuff.com/post/node-js-make-http-put-request-exampleexample.html)
+- [MongoDB Update Documents 🔗](https://docs.mongodb.com/manual/tutorial/update-documents/)
+- [Node.js, Express & MongoDb: Build a CRUD Rest Api example 🔗](https://www.bezkoder.com/node-express-mongodb-crud-rest-api/#Update_an_object)
+
+## DELETE
+
+- [Node JS Make HTTP Delete Request Example 🔗](https://www.itsolutionstuff.com/post/node-js-make-http-delete-request-exampleexample.html)
+- [MongoDB drop index 🔗](https://docs.mongodb.com/manual/reference/method/db.collection.dropIndex/)
+- [Node.js MongoDB Delete 🔗](https://www.w3schools.com/nodejs/nodejs_mongodb_delete.asp)
+
+## MongoDB CRUD
+
+Here is a great article that sums up the CRUD (Create, Read, Update, Delete) process using Node.js and MongoDB.
+
+- [Building a Simple CRUD app with Node, Express, and MongoDB 🔗](https://zellwk.com/blog/crud-express-mongodb/)
+
+## Linters
+
+Once you learn how to use code linters, you should never go back. When properly configured, they help keep your code, neat, clean, functional, and error-free. You should use a linter on your code for the remainder of this class.
+
+- [JavaScript Linters 🔗](https://gomakethings.com/javascript-linters/)
+- [The Top Five JavaScript Linting Tools 🔗](https://www.codeguru.com/tools/the-top-five-javascript-linting-tools/)
+- [(OPTIONAL) YouTube: VSCode ESLint, Prettier & Airbnb Style Guide Setup 🔗](https://www.youtube.com/watch?v=SydnKbGc7W8)
+
+## Code Formatters
+
+Once you learn how to use code formatters, you should never go back. When properly configured, they help keep your code neat, consistent and clean. You should use a formatter on your code for the remainder of this class.
+
+- [Why You Should Use a Code Formatter 🔗](https://medium.com/@ryconoclast/why-you-should-use-a-code-formatter-4f02dd40db14)
+- [Top 10 VS Code Extensions 🔗](https://www.apexhours.com/top-10-vs-code-extensions/)
+- [(OPTIONAL) YouTube: VS Code Autoformatter - Configuring Prettier 🔗](https://youtu.be/wTRe2CjRZ4g)
+
+More:
 
 - [VSCode ESLint, Prettier & Airbnb Style Guide Setup 🔗](https://youtu.be/SydnKbGc7W8)
   - eslint.org/docs/latest/ [🔗](https://eslint.org/docs/latest/)
 - [VS Code Autoformatter - Configuring Prettier 🔗](https://youtu.be/wTRe2CjRZ4g)
 - [Setup ESLINT and PRETTIER in React app 🔗](https://dev.to/knowankit/setup-eslint-and-prettier-in-react-app-357b)
 
+## Project Configuration and Management
+
+The following article shows how to set up a linter and formatter with your project. Ignore the React stuff this time around and be sure to select Node instead of Browser when it prompts for where your code will run.
+
+- [Setup ESLINT and PRETTIER 🔗](https://dev.to/knowankit/setup-eslint-and-prettier-in-react-app-357b)
+
+Once this is all set up, you can run commands from the terminal like: "npm run lint" or the others that we put into the package.json.
+
 ---
 
 # w04 - API Documentation
 
 - [Lesson 04 🔗](https://cse341.netlify.app/lesson4)
+  - [cse341 L04 Introduction 📺](https://youtu.be/Z-adw31RbEI)
+  - [Contacts Frontend MERN stack Overview 📺](https://youtu.be/fLv6KkCOZ3o)
+  - [Deploy Node.js Swagger API Documentation to Heroku (cse341 L04 personal assignment) 📺](https://youtu.be/6SIACHzJe3g)
 
 ## API Documentation
 
@@ -150,12 +286,45 @@
 # w05 - REST & JSON Alternatives
 
 - [Lesson 5 🔗](https://cse341.netlify.app/lesson5)
+  - [cse341 L05 Introduction 🔗](https://youtu.be/QXwaYh4Yt9Q)
+  - [Set up Swagger (Design First) for Node.js and deploy to Heroku (cse341 Lesson 5 walkthrough) 🔗](https://youtu.be/AIi1gZOsRmY)
+
+## JSON vs XML
+
+- [JSON vs XML 🔗](https://www.w3schools.com/js/js_json_xml.asp)
+- [A Deep Look at JSON vs. XML, Part 1: The History of Each Standard 🔗](https://www.toptal.com/web/json-vs-xml-part-1)
+
+## REST Overview
+
+- [What is REST? 🔗](https://www.codecademy.com/article/what-is-rest)
+
+## RPC
+
+- [Remote Procedure Call(RPC) 🔗](https://www.techtarget.com/searchapparchitecture/definition/Remote-Procedure-Call-RPC)
+- [RPC vs REST 🔗](https://iq.opengenus.org/rpc-vs-rest/)
+
+## XML+RPC
+
+- [XML-RPC - Examples 🔗](https://www.tutorialspoint.com/xml-rpc/xml_rpc_examples.htm)
+- [Stack: How to use XML RPC using Node.js 🔗](https://stackoverflow.com/questions/53514370/do-you-nou-how-to-run-xmlrpc-requests-from-node-js)
+
+## SOAP
+
+- [What is SOAP? 🔗](https://www.tutorialspoint.com/soap/what_is_soap.htm)
+- [SOAP vs REST 🔗](https://smartbear.com/blog/soap-vs-rest-whats-the-difference/)
+
+## GraphQL
+
+- [GraphQL Docs 🔗](https://graphql.org/)
+- [Setting up GraphQL Server with NodeJS, Express and MongoDb 🔗](https://medium.com/@utkarshprakash/setting-up-graphql-server-with-nodejs-express-and-mongodb-d72fba13216)
 
 ---
 
 # w06 - Validation & Error Handling
 
 - [Lesson 6 🔗](https://cse341.netlify.app/lesson6)
+  - [cse341 L06 Introduction 🔗](https://youtu.be/4n2J90fC_eY)
+  - [Node.js API Put and Delete with error handling (cse341 L06 personal assignment example) 🔗](https://youtu.be/L7qj_g06NhY)
 
 ## Validation
 
@@ -244,17 +413,17 @@
 # w08 - OAuth
 
 - [Lesson 8 🔗](https://cse341.netlify.app/lesson8)
-  - Class Solution [🔗](https://github.com/byui-cse/cse341-code-student/branches/all?query=L08)
+  - [cse341 L08 Introduction 🔗](https://youtu.be/TqbTjEf5elQ)
+  - [Class Solution 🔗](https://github.com/byui-cse/cse341-code-student/branches/all?query=L08)
+  - [cse341 L11 Introduction 🔗](https://youtu.be/CQq1wetWyKI)
 
-## Explanation
-
-### OAuth and Swagger
+## OAuth and Swagger
 
 - [OAuth 2.0 🔗](https://swagger.io/docs/specification/authentication/oauth2/)
   - The OAuth 2.0 Authorization Framework - fc6749 [🔗](https://datatracker.ietf.org/doc/html/rfc6749)
 - [OAuth 2.0 configuration 🔗](https://swagger.io/docs/open-source-tools/swagger-ui/usage/oauth2/)
 
-### JSON Web Tokens (JWT)
+## JSON Web Tokens (JWT)
 
 - [Introduction to JSON Web Tokens 🔗](https://jwt.io/introduction)
   - JSON Web Token (JWT) - fc7519 [🔗](https://datatracker.ietf.org/doc/html/rfc7519)
@@ -265,7 +434,7 @@
   - JWT Authentication Tutorial - Node.js [🔗](https://youtu.be/mbsmsi7l3r4) 📺 ~27m
   - JWT Playground [🔗](https://jwt.io/)
 
-### JWT meets OAuth
+## JWT meets OAuth
 
 - [OAuth vs JWT (JSON Web Tokens): An In-Depth Comparison 🔗](https://supertokens.com/blog/oauth-vs-jwt)
   - Revoking Access to JWT tokens with a Blacklist/Deny List [🔗](https://supertokens.com/blog/revoking-access-with-a-jwt-blacklist)
@@ -284,7 +453,8 @@
 # w09 - API Gateways and Managers
 
 - [Lesson 9 🔗](https://cse341.netlify.app/lesson9)
-  - GitHub source code [🔗](https://github.com/byui-cse/cse341-code-student/branches/all?query=L09)
+  - [cse341 L09 Introduction 🔗](https://youtu.be/I7y9vYNuCFc)
+- GitHub source code [🔗](https://github.com/byui-cse/cse341-code-student/branches/all?query=L09)
 
 ## What Is An API Gateway?
 
@@ -310,27 +480,133 @@ An API Gateway acts as a middle layer between your API services and the clients 
 
 ---
 
-# w10 -
+# w10 - API Gateways and Managers
 
-- [Lesson 10 🔗](https://cse341.netlify.app/lesson10)
+- [esson 10 🔗](https://cse341.netlify.app/lesson10)
+  - [cse341 L10 Introduction 🔗](https://youtu.be/tF7hLQtFLA0)
+
+## Setting up an Azure Gateway
+
+This is an example that would walk you through setting up an API manager through Microsoft Azure.
+
+- [Create a new Azure API Management instance using Visual Studio Code 🔗](https://docs.microsoft.com/en-us/azure/api-management/vscode-create-service-instance)
+  - Once you import the backend API into API Management, your API Management API becomes a façade for the backend API. You can customize the [_façade_ 🔗](https://refactoring.guru/design-patterns/facade) to your needs in API Management without touching the backend API.
+- [Import and publish your first API (first of a series of 10 tutorials) 🔗](https://docs.microsoft.com/en-us/azure/api-management/import-and-publish)
 
 ---
 
-# w11 -
+# w11 - Testing
 
 - [Lesson 11 🔗](https://cse341.netlify.app/lesson11)
+  - [cse341 L11 Introduction 🔗](https://youtu.be/CQq1wetWyKI)
+- Repository [🔗](https://github.com/byui-cse/cse341-code-student/branches/all?query=L11)
+
+## Why Testing?
+
+- [Comparing Node.js unit testing frameworks 🔗](https://blog.logrocket.com/the-best-unit-testing-frameworks-for-node-js/#whatisunittestinginnodejs)
+- [What Is the Best Unit Testing Framework for JavaScript? 🔗](https://www.testim.io/blog/best-unit-testing-framework-for-javascript/)
+
+## JavaScript Testing Frameworks
+
+- [Jest 🔗](https://jestjs.io/)
+- [Mocha 🔗](https://mochajs.org/)
+- [Jasmine 🔗](https://jasmine.github.io/)
+- [Ava 🔗](https://github.com/avajs/ava)
+
+## Writing Unit Tests with Jest
+
+- [Getting Started 🔗](https://jestjs.io/docs/getting-started)
+- [Jest Tutorial for Beginners: Getting Started With JavaScript Testing 🔗](https://www.valentinog.com/blog/jest/)
+- [Debug Jest test files (look at Leigh Mathieson's answer) 🔗](https://stackoverflow.com/questions/33247602/how-do-you-debug-jest-tests)
+- [(OPTIONAL) How to add unit testing to express using jest 🔗](https://www.youtube.com/watch?v=hz0_q1MJa2k&t=0s&ab_channel=SamMeech-Ward)
+- [Jest with Mockingoose Student Tutorial 🔗](https://youtu.be/EtTYi-6wiC8)
+- [Using Jest with MongoDb 🔗](https://jestjs.io/docs/mongodb)
+- [Supertest(Library to use with another testing framework, for testing APIs.) 🔗](https://fek.io/blog/how-to-add-unit-testing-to-express-using-jest)
 
 ---
 
-# w12 -
+# w12 - Testing
 
 - [Lesson 12 🔗](https://cse341.netlify.app/lesson12)
+  - [cse341 L12 Introduction 🔗](https://youtu.be/GiJUg9f1QBA)
+
+Same content as Week 11.
+
+- Additional content:
+  1. [Introduction To Automated Testing 🔗](https://faun.pub/introduction-to-automated-testing-f3d004b2ca84#47f2)
+  2. [How To Setup Your TypeScript App Test Environment With Jest 🔗](https://faun.pub/how-to-setupyour-typescript-app-test-environmentwith-jest-b41c481a2c)
+  3. [How To Test Your Rest API With Jest And SuperTest (I) 🔗](https://faun.pub/how-to-test-your-rest-api-with-jest-and-supertest-i-196bc84e6c5f)
+- Tags:
+  - https://medium.com/tag/supertest
 
 ---
 
-# w13 -
+# w13 - Wrap Up
 
 - [Lesson 13 🔗](https://cse341.netlify.app/lesson13)
+  - [cse341 L13 Introduction 🔗](https://youtu.be/UNYsLLw3EL0)
+
+## Resume Tips
+
+- [How To Craft The Perfect Web Developer Ré­su­mé 🔗](https://www.smashingmagazine.com/2018/06/web-developer-resume/)
+- [Sign up for a résumé review through Handshake. 🔗](https://app.joinhandshake.com/appointments)
+- [Student Web Developer Resume Samples 🔗](https://www.qwikresume.com/resume-samples/student-web-developer/)
+
+## Interview Prep
+
+- [BYU-Idaho Career Center Powerful Job Interviews 🔗](https://www.byui.edu/career/preparation/interview-skills)
+- [19 Web Developer Interview Questions You Should Know 🔗](https://www.codementor.io/blog/web-developer-interview-questions-3ey8yl7epg)
+- [How to Ace the Web Developer Job Interview 🔗](https://www.codingdojo.com/blog/programming-interview-questions)
+
+Here are some questions you should be prepared to answer for yourself:
+
+- How do I schedule a practice or mock interview with the BYUI career center?
+- What are the Wall Street Interviewing Strategies?
+- What is your market value?
+- How can you make a powerful introduction?
+- How should you dress for interviews or career fairs? What does your appearance say about you?
+
+## Interview Questions
+
+Here are some questions you should be prepared to answer in an interview regarding the technologies taught in this class:
+
+1. T/F: NPM is a programming language.
+1. Node.js is a runtime for Javascript, NOT a Back End language.
+1. Node.js is a back end language, NOT a runtime for JavaScript.
+1. Node.JS allows JavaScript to be run outside of the browser.
+1. What does NPM stand for?
+1. What is the command to install the nodemon package globally?
+1. How do you initialize a Node.js project that creates a package.json and node_modules for you?
+1. What is the method to set up a server and make it run in a certain port?
+1. What Node.JS code is compiled into?
+1. What are Middleware functions?
+1. What is Express.js?
+1. What does MVC stand for?
+1. How do you make use of an express router for your requests?
+1. What is the responsibility of the Model?
+1. What is the responsibility of the Controller?
+1. How do you make relations in a NoSQL database such as MongoDB?
+1. What are the most important pieces of the structure of a MongoDB database?
+1. How do you find the id of a MongoDB document?
+1. What is a Cookie?
+1. What is a real disadvantage of using cookies on the client-side?
+1. What is a CSRF attack?
+1. The 300–399 range of http response status codes are for what?
+1. The 200–299 range of http response status codes are for what?
+1. The 400–499 range of http response status codes are for what?
+1. The 500–599 range of http response status codes are for what?
+1. What is the synchronous way of handling errors?
+1. What does the term “Sanitizing” refer to in Node.js?
+1. Where exactly do you inject your dependencies?
+1. Is Node.js recommended for heavy calculations and 3D rendering?
+1. What is risk?
+1. What are the tasks of risk management?
+1. When identifying and classifying risks, what are the 5 main risk impact areas?
+1. Why isn’t it possible to pass images/files with the file picker through the body of the request?
+1. What do the skip( ) and limit( ) methods do and where do you use them?
+1. Which is the HTTP verb that should be used with client-side JavaScript in order to delete something upon request?
+1. T/F: When performing an asynchronous request, the server has to send a response without reloading/re-rendering the page.
+1. T/F: Because every company’s needs are unique, the payment process should not be outsourced and the development team should develop its own.
 
 ---
 
@@ -349,7 +625,5 @@ An API Gateway acts as a middle layer between your API services and the clients 
 ## Readings
 
 - https://github.com/totaljs/cms/tree/master
-
-  ![alt text](am6l001bn41d.png)
-
 - https://blog.tooljet.com/build-cms-using-lowcode-and-mongodb/
+- https://www.educative.io/courses/grokking-the-low-level-design-interview-using-ood-principles/getting-ready-library-management-system
